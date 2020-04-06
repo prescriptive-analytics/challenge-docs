@@ -9,9 +9,6 @@ In response to the current world-wide concern of coronavirus, we would like to h
 
 Goal & Metrics
 --------------
-
-Goal&Metrics
-************
 Our goal is to minimize the number of the infected people and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
 
 .. math::
@@ -19,7 +16,9 @@ Our goal is to minimize the number of the infected people and at the same time, 
 
 
 
- The weighted sum of the number of infected people and the number of quarantined people, * :math:`\lambda` is a predefined factor.
+
+
+ The weighted sum of the number of infected people and the number of quarantined people, :math:`\lambda` is a predefined factor.
 
 
 
