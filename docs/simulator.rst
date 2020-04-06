@@ -1,71 +1,38 @@
 Simulator
-=========
+*********
+The simulator simulates individual mobility in a city of :math:`R` Regions with :math:`M` people. Each region consists of several POIs, where each POI can serve three functions: working, living and commercial purposes. Each person is associated with one living POI and one working POI (randomly sampled from :math:`K_{work}` nearest POIs of the living POI).
 
-Simulation Process
----------
+Mobility of a person
+++++++++++++++++++++
+A person has different modes of mobility during workdays and weekends:
 
-The simulator covers a city of 100 regions, with 5000 people. Each region can serve three functions: working, living and commercial purposes. Each person is associated with one working region and one living region. 
+On working days, a person will go to work at a certain time :math:T_{start} \sim Uniform(t_{s1}, t_{s2})`, and stay there for :math:`T_{work} \sim Uniform(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the commercial POI)  with a probability of P_{com} and stay there for :math:`T_{mall} \sim Uniform (t_{c1}, t_{c2})` hours. Then, they will return home.
 
-On working days, people will go to work at a certain time (e.g., 8 am), and stay there for several hours (randomly integer between 7 and 10). After work, they may go shopping in the nearby region with a probability P_{sw}. Then, they will return home.
+On weekends, people may visit a commercial POI within the whole city with a probability :math:`P’_{com}` and stay there for :math:`T'_mall \sim Uniform (t’_{c1}, t’_{c2})` hours. After that, they will return home.
 
-On weekends, people may go shopping with a probability P_{se}, and randomly choose a commercial region from the whole city. After that, they will return home.
+Health status (HS) of a person
+++++++++++++++++++++++++++++++
+Each person can have several health stages (we do not consider the treatment process now). 
+.. math::
+1.Healthy \rightarrow 2. Infected\ (undiscovered) \rightarrow 3. Infected\ (discovered) \rightarrow 4. Infected (critical) \rightarrow 5. Immune
 
-Each person can have several stages (we do not consider the treatment process now).
-Healthy → 2. Infected (undiscovered) → 3. Infected (discovered) → 4. Infected (critical) 
+From HS 1 to HS 2, people can get infected via contact with infected people, with different probabilities from two different types of contacts.
 
-From stage 1 to stage 2, people can get infected via contact with infected people. There are two different types of contact.
-Simple contact: All people working in the same region or living in the same region are regarded as simple contacts. People will also be regarded as simple contacts if they appear in the same commercial region at the same time.
-Close contact: Each person has a close contact group in his/her living region (size of which described by a distribution D_l) and another close contact group in his/her working region (size of which described by a distribution D_w).
-From stage 2 to stage 3, there is a fixed incubation period of two days.
-The temporal length (# of days) from stage 3 to stage 4 is drawn from a distribution D_c.
+* :math:`Inf_{simple}` from simple contact: All people working in the same region or living in the same region are regarded as simple contacts. People will also be regarded as simple contacts if they appear in the same commercial POI at the same time.
+* :math:`Inf_{close}` from close contact: A group of people with size :math:`K_L \sim Uniform(I_{c1}, I_{c2})` in a person’s living region is considered as his/her closed contacts. And a group of people with size :math:`K_W \sim Uniform(I_{c1}, I_{c2})` in a person’s working region is also considered as his/her closed contacts.
 
-We will provide policies to put people in hospital, quarantine people, or force people to stay at home.
+From HS 2 to HS 3, there is a fixed incubation period of :math:`INC` days.
 
-Control policies
------------------
+From HS 3 to HS 4, there is a development time period :math:`DEV \sim Normal(d_1, d_2)`.
 
-There are in total six groups of people with different levels of risks. 
-- G1: Infected (critical)
-- G2: Infected (discovered)
-- G3: Close contact of G1
-- G4: Simple contact of G1
-- G5: Close contact of G2
-- G6: Simple contact of G2
+From HS 4 to HS 5, there is a fixed treatment time period of :math:`IMM` days.
 
-
-We can take the following three actions to them:
-- A1: Treat (put in hospital)
-- A2: Quarantine
-- A3: Force to stay at home
-
-Based on these definitions, we have provided 8 different strategies (we will add more later):
-- S1: G1 A1
-- S2: G3 A2
-- S3: G3 A3
-- S4: G2 A1
-- S5: G5 A2
-- S6: G5 A3
-- S7: G4 A2
-- S8: G4 A3
-
-We use an 8-bit binary string to represent the policy. Each bit represents whether the corresponding strategy is selected. For instance, “11000000” represents that S1 and S2 are selected. 
-
-Note that, when multiple strategies are applied to the same group of people, the more strict one will take effect. For instance, if S2 and S5 are selected, only S2 will take effect.
+Controlling action of a person
+++++++++++++++++++++++++++++++
+We can provide different actions to each individual:
 
 
-
-Running the simulator
----------------------
-
-You can conduct the experiment by running the following commands, with options listed here to select different strategies and parameters.
-./fast.out
-
-Usage: <option(s)>
-	--help		 Show this help message
-	--totalRounds	 How many times to run the whole experiment
-	--strategy	 A binary string to specify the different policies to conduct
-	--startGL	 Specify the day to start quarantine	
-    --daysToTrack	 Number of days to trace back when looking for the contacts of the confirmed case
-	--daysToQuarantine	 Number of days to quarantine
-	--daysToForceAtHome	 Number of days to force people stay at home
-	--regionInfectedThresForSimpleContact	 If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
+* Free: The person can move normally.
+* In quarantine: The person is quarantined, with access from his/her close contacts at the living POI.
+* In isolation: The person is isolated, without access from anyone.
+* In hospital: The person is under treatment in the hospital. A person can only be in the hospital after Health Stage 2.

@@ -10,11 +10,16 @@ In response to the current world-wide concern of coronavirus, we would like to h
 Goal & Metrics
 --------------
 
-Our goal is to minimize the #infected and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
+Goal&Metrics
+************
+Our goal is to minimize the number of the infected people and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
+
+.. math::
+ \begin{array}{rcll}&\#_{infected} + \lambda \times \#_{quarantined} \end{array}
 
 
-1.  \#_{infected} + \lambda \times \#_{quarantined}: The weighted sum of the number of infected people and the number of quarantined people.
-2. \#_{quarantined}\ s.t. \ \#_{infected} \leq 100 : The number of people needs to be quarantined in order to keep #infected under 100.
+
+ The weighted sum of the number of infected people and the number of quarantined people, * :math:`\lambda` is a predefined factor.
 
 
 
