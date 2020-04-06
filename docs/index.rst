@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Read the Simulator's documentation!
+Welcome to Read the COVID-19 Challenge!
 ==================================================
 
 Contents:

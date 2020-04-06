@@ -1,4 +1,4 @@
-Coronavirus Challenge
+COVID-19 Challenge
 ======================
 
 In response to the current world-wide concern of coronavirus, we would like to host a challenge on prescriptive analytics for coronavirus. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
