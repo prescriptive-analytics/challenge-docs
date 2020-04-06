@@ -1,6 +1,9 @@
 Simulator
 =========
 
+Simulation Process
+---------
+
 The simulator covers a city of 100 regions, with 5000 people. Each region can serve three functions: working, living and commercial purposes. Each person is associated with one working region and one living region. 
 
 On working days, people will go to work at a certain time (e.g., 8 am), and stay there for several hours (randomly integer between 7 and 10). After work, they may go shopping in the nearby region with a probability P_{sw}. Then, they will return home.
@@ -62,7 +65,7 @@ Usage: <option(s)>
 	--totalRounds	 How many times to run the whole experiment
 	--strategy	 A binary string to specify the different policies to conduct
 	--startGL	 Specify the day to start quarantine	
-    --daysToTrack	 # days to trace back when looking for the contacts of the confirmed case
-	--daysToQuarantine	 # days to quarantine
-	--daysToForceAtHome	 # days to force people stay at home
+    --daysToTrack	 Number of days to trace back when looking for the contacts of the confirmed case
+	--daysToQuarantine	 Number of days to quarantine
+	--daysToForceAtHome	 Number of days to force people stay at home
 	--regionInfectedThresForSimpleContact	 If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
