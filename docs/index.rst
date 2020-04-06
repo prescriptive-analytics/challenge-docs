@@ -3,23 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Read the Docs Template's documentation!
+Welcome to Read the Simulator's documentation!
 ==================================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
-   :glob:
+   :caption: Contents:
 
-   *
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   introduction
+   simulator
+   

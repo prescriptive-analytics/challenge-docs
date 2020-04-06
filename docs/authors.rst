@@ -1,1 +1,7 @@
-.. include:: ../AUTHORS.rst
+Authors
+-------
+
+* Hua Wei
+* Guanjie Zheng
+* Hanyuan Shi
+
