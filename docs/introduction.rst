@@ -3,7 +3,7 @@ Coronavirus Challenge
 
 In response to the current world-wide concern of coronavirus, we would like to host a challenge on prescriptive analytics for coronavirus. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
 
-.. figure:: https://github.com/prescriptive-analytics/prescriptive-analytics.github.io/tree/master/img/results.gif
+.. figure:: https://github.com/prescriptive-analytics/chanllenge-docs/raw/master/data/results.gif
     :align: center
     
 
