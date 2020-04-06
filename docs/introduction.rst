@@ -11,14 +11,7 @@ Goal & Metrics
 --------------
 Our goal is to minimize the number of the infected people and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
 
-.. math::
- \begin{array}{rcll}&\#_{infected} + \lambda \times \#_{quarantined} \end{array}
-
-
-
-
-
- The weighted sum of the number of infected people and the number of quarantined people, :math:`\lambda` is a predefined factor.
+- :math:`\#_{infected} + \lambda \times \#_{quarantined}`: The weighted sum of the number of infected people and the number of quarantined people, :math:`\lambda` is a predefined factor.
 
 
 
