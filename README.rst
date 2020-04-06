@@ -8,6 +8,7 @@ Goal & Metrics
 
 Our goal is to minimize the #infected and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
 
+
 1.  \#_{infected} + \lambda \times \#_{quarantined}: The weighted sum of the number of infected people and the number of quarantined people.
 2. \#_{quarantined}\ s.t. \ \#_{infected} \leq 100 : The number of people needs to be quarantined in order to keep #infected under 100.
 
