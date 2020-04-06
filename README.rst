@@ -1,27 +1,20 @@
-Template
-========
+Coronavirus Challenge
+======================
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+In response to the current world-wide concern of coronavirus, we would like to host a challenge on prescriptive analytics for coronavirus. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
 
-Look how easy it is to use:
+Goal & Metrics
+--------------
 
-    import project
-    # Get your stuff done
-    project.do_stuff()
+Our goal is to minimize the #infected and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
 
-Features
---------
+1.  \#_{infected} + \lambda \times \#_{quarantined}: The weighted sum of the number of infected people and the number of quarantined people.
+2. \#_{quarantined}\ s.t. \ \#_{infected} \leq 100 : The number of people needs to be quarantined in order to keep #infected under 100.
 
-- Be awesome
-- Make things faster
-
-Installation
+Simulator
 ------------
 
-Install $project by running:
 
-    install project
 
 Contribute
 ----------
