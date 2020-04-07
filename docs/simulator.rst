@@ -29,7 +29,7 @@ From HS 3 to HS 4, there is a development time period :math:`DEV \sim Normal(d_1
 
 From HS 4 to HS 5, there is a fixed treatment time period of :math:`IMM` days.
 
-Controlling action of a person
+Controlling a person
 ++++++++++++++++++++++++++++++
 We can provide different actions to each individual:
 
