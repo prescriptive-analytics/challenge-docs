@@ -8,13 +8,13 @@ A person has different modes of mobility during workdays and weekends:
 
 On working days, a person will go to work at a certain time :math:`T_{start} \sim Uniform(t_{s1}, t_{s2})`, and stay there for :math:`T_{work} \sim Uniform(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the commercial POI)  with a probability of P_{com} and stay there for :math:`T_{mall} \sim Uniform (t_{c1}, t_{c2})` hours. Then, they will return home.
 
-On weekends, people may visit a commercial POI within the whole city with a probability :math:`P’_{com}` and stay there for :math:`T'_mall \sim Uniform (t’_{c1}, t’_{c2})` hours. After that, they will return home.
+On weekends, people may visit a commercial POI within the whole city with a probability :math:`P’_{com}` and stay there for :math:`T'_{mall} \sim Uniform (t’_{c1}, t’_{c2})` hours. After that, they will return home.
 
 Health status (HS) of a person
 ++++++++++++++++++++++++++++++
-Each person can have several health stages (we do not consider the treatment process now). 
-.. math::
-1.Healthy \rightarrow 2. Infected\ (undiscovered) \rightarrow 3. Infected\ (discovered) \rightarrow 4. Infected (critical) \rightarrow 5. Immune
+Each person can have several health stages: 
+
+:math:`1.Healthy \rightarrow 2. Infected\ (undiscovered) \rightarrow 3. Infected\ (discovered) \rightarrow 4. Infected (critical) \rightarrow 5. Immune`
 
 From HS 1 to HS 2, people can get infected via contact with infected people, with different probabilities from two different types of contacts.
 
