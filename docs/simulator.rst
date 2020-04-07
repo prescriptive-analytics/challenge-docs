@@ -13,7 +13,7 @@ On weekends, people may visit a commercial POI within the whole city with a prob
 Health status (HS) of a person
 ++++++++++++++++++++++++++++++
 Each person can have several health stages: 
-* :math:`1. Healthy \rightarrow 2. Infected\ (undiscovered) \rightarrow 3. Infected\ (discovered) \rightarrow 4. Infected (critical) \rightarrow 5. Immune`
+ :math:`1. Healthy \rightarrow 2. Infected\ (undiscovered) \rightarrow 3. Infected\ (discovered) \rightarrow 4. Infected (critical) \rightarrow 5. Immune`
 
 From HS 1 to HS 2, people can get infected via contact with infected people, with different probabilities from two different types of contacts.
 
