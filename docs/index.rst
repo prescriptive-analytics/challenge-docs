@@ -15,4 +15,6 @@ Contents:
    introduction
    simulator
    start
+   install
+   startpython
    

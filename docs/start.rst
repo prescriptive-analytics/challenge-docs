@@ -1,4 +1,4 @@
-Getting Started
+Quick Start with C++ simulator
 ***************
 Here, we provide an example control strategy, with different actions on different groups of people.
 
@@ -52,3 +52,4 @@ Usage:
     --daysToForceAtHome	 # days to force people stay at home
     --regionInfectedThresForSimpleContact	 If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
         
+
