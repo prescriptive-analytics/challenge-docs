@@ -23,12 +23,17 @@ Create Engine
 
 Arguments In Config File
 ^^^^^^^^^^^^^^^^^^^^^^^^
+- ``help``: Show this help message
+- ``totalRounds``: How many times to run the whole experiment
 - ``strategy``: A binary string to specify the different policies to conduct
-- ``startGL``: Specify the day to start quarantine  
+- ``startIntervene``: Specify the day to start intervention 
 - ``daysToTrack``: # days to trace back when looking for the contacts of the confirmed case
-- ``daysToQuarantine``: # days to quarantine
-- ``daysToForceAtHome``: # days to force people stay at home
-- ``regionInfectedThresForSimpleContact: If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
+- ``daysToTreat``: # days to treat at hospotal before immume
+- ``daysToIsolate``: # days to force people isolate at home
+- ``daysToQuarantine``: # days to force people stay at home
+- ``daysToConfine``: # days to force people stay within community
+- ``regionInfectedThresForStrangerContact: If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
+
         
 Sample Config File
 ^^^^^^^^^^^^^^^^^^^
@@ -38,19 +43,20 @@ Sample Config File
 
 .. code-block:: json
 
-    {
+      {
+
         "strategy": "10001000",
         "daysToTrack": 1,
-        "startGL": 1,
-        "daysToTrack": 1,
-        "regionInfectedThresForSimpleContact": 3,
+        "startIntervene": 1,
+        "regionInfectedThresForStrangerContact": 3,
         "daysToTreat": 1e9,
+        "daysToIsolate": 1,
         "daysToQuarantine": 1,
-        "daysToForceAtHome": 1,
+        "daysToConfine": 1,
         "seed": 1,
         "dir": "./examples",
         "saveReplay": false
-    }
+      }
 
 Simulation
 ----------
@@ -99,29 +105,35 @@ Data Access API
 
 - Return the number of people not in hospital.
 
-``get_hospital_count()``:
-
-- Return the number of hospitalized people.
-
-``get_gl_count()``:
-
-- Return the number of GL people.
-
 ``get_infect_count()``:
 
 - Return the number of infected people.
 
-``get_quanrantine_count()``:
 
-- Return the number of non-free people.
+``get_hospitalize_count()``:
 
-``get_simple_count()``
+- Return the number of hospitalized people.
 
-- Return the number of simple contacts.
+``get_isolate_count()``:
 
-``get_close_count()``
+- Return the number of isolated people.
 
-- Return the number of close contacts.
+``get_quarantine_count()``:
+
+- Return the number of quanrantined people.
+
+``get_confine_count()``:
+
+- Return the number of confined people.
+
+
+``get_stranger_count()``
+
+- Return the number of stranger contacts.
+
+``get_acquaintance_count()``
+
+- Return the number of acquaintance contacts.
 
 
 ``get_current_time()``:
