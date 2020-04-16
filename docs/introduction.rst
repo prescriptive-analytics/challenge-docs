@@ -9,9 +9,15 @@ In response to the current world-wide concern of coronavirus, we would like to h
 
 Goal & Metrics
 --------------
-Our goal is to minimize the number of the infected people and at the same time, quarantine people as few as possible. Therefore, we have defined the following metrics:
+In this competition, we aim to look for effective human mobility intervention policies in a Covid-19. Generally, our goal is to minimize the total number of infected people and, at the same time, minimize the intervention on human mobility.
 
-- :math:`\#_{infected} + \lambda \times \#_{quarantined}`: The weighted sum of the number of infected people and the number of quarantined people, :math:`\lambda` is a predefined factor.
+We first define two basic metrics:
+
+- :math:`I`: the number of people who are infected with coronavirus.
+- :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \frac{\lambda_h Home + Isolated} {\lambda_h + 1}`.)
+
+Based on these two basic metrics, we calculate the following score for this competition.
+- :math:`\#_{infected} + \lambda \times \#_{quarantined}`: The weighted sum of :math:`I` and :math:`Q`, :math:`\lambda` is a predefined factor.
 
 
 

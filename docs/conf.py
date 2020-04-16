@@ -95,7 +95,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -173,7 +173,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ReadtheDocsTemplatedoc'
+htmlhelp_basename = 'Simulatordoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -193,8 +193,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ReadtheDocsTemplate.tex', u'Read the Docs Template Documentation',
-   u'Read the Docs', 'manual'),
+  (master_doc, 'ReadtheDocsTemplate.tex', u'Simulator Documentation',
+   u'Hua Wei', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -223,8 +223,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'readthedocstemplate', u'Read the Docs Template Documentation',
-     [u'Read the Docs'], 1)
+    (master_doc, 'simulator', u'Simulator Documentation',
+     [author], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -237,8 +237,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ReadtheDocsTemplate', u'Read the Docs Template Documentation',
-   u'Read the Docs', 'ReadtheDocsTemplate', 'One line description of project.',
+  (master_doc, 'Simulator', u'Simulator Documentation',
+   author, 'Simulator', 'One line description of project.',
    'Miscellaneous'),
 ]
 
