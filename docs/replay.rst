@@ -43,8 +43,8 @@ To provide required data, a log file in a format as shown below is needed:
 
 .. code-block:: python
 
-day:0, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:198, CurrentInfected:3, AccDiscovered:0, AccCritical:0, AccAcquaintance:0, AccStranger:0, measurement (#quarantine + #infected):3
-day:1, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:197, CurrentInfected:4, AccDiscovered:0, AccCritical:0, AccAcquaintance:0, AccStranger:0, measurement (#quarantine + #infected):4
+day:0, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:198, CurrentInfected:3
+day:1, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:197, CurrentInfected:4
 
 
 
