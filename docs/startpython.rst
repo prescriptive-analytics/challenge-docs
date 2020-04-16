@@ -45,17 +45,26 @@ Sample Config File
 
       {
 
-        "strategy": "10001000",
-        "daysToTrack": 1,
+        "strategy": "100010001",
+        "daysToTrack": 5,
         "startIntervene": 1,
-        "regionInfectedThresForStrangerContact": 3,
+        "regionInfectedThresForStrangerContact": 1,
         "daysToTreat": 1e9,
         "daysToIsolate": 1,
         "daysToQuarantine": 1,
         "daysToConfine": 1,
+
         "seed": 1,
         "dir": "./examples",
-        "saveReplay": false
+        "predefinedStrategy": true,
+        "saveReplay": true,
+        "results_dir": "results",
+        "save_replay_dir": "",
+
+
+        "POI_file": "w_small.txt",
+        "population": 200,
+        "location_file": "w_small_visual.json"
       }
 
 Simulation
