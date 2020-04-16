@@ -41,19 +41,16 @@ The player supports showing the change of different metrics in a chart simultane
 
 To provide required data, a log file in a format as shown below is needed:
 
-.. code-block::
+.. code-block:: python
 
-  title
-  0.3            0.4              0.1          ...(step1)
-  0.5            0.2              0.2          ...(step2)
-  ...(metric1)   ...(metric2)     ...(metric3)
+day:0, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:198, CurrentInfected:3, AccDiscovered:0, AccCritical:0, AccAcquaintance:0, AccStranger:0, measurement (#quarantine + #infected):3
+day:1, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:197, CurrentInfected:4, AccDiscovered:0, AccCritical:0, AccAcquaintance:0, AccStranger:0, measurement (#quarantine + #infected):4
 
-The first line is the title of the chart.
 
-Each row stands for a time step and each column stands for a specific metric.
-For example, to track vehicle numbers of three crossroads respectively, we need three columns and each column stands for the vehicle number of a certain crossroads.
 
-In one row, numbers are separated by one or more spaces or tabs.
+Each row stands for one day and each column stands for a specific metric.
+
+In one row, numbers are separated by one spaces and comma.
 
 The numbers in one column will be shown as points connected by one line in the chart.
 
