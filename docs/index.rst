@@ -17,4 +17,4 @@ Contents:
    start
    install
    startpython
-   
+   replay
