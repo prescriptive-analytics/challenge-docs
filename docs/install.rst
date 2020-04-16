@@ -25,6 +25,7 @@ Simualtor has little dependencies, so building from source is not scary.
 .. code-block:: shell
     
     git clone https://github.com/gjzheng93/COVID.git
+    git checkout wrapping
     
 4. Go to Simualtor project's root directory and run
 
