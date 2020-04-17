@@ -26,7 +26,7 @@ Arguments In Config File
 - ``help``: Show this help message
 
 
-- ``strategy``: A binary string to specify the different policies to conduct
+- ``strategy``: A binary string to specify the different strategy templates to conduct. The meanings of the binary string can be found here: :ref:`start`.
 - ``startIntervene``: Specify the day to start intervention 
 - ``daysToTrack``: # days to trace back when looking for the contacts of the confirmed case
 - ``daysToTreat``: # days to treat at hospotal before immume
@@ -227,7 +227,7 @@ Running Example
 
 Here we provide a sample code for running our simulator, which can be found [here](https://github.com/gjzheng93/COVID/blob/wrapping/tests/python/test_api.py).
 
-..code-block:: python
+.. code-block:: python
 
     import simulator
     import os

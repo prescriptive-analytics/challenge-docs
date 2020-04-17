@@ -1,10 +1,8 @@
 Quick Start with Simple Rules
 ***************
 
-Setting 1: With pre-defined strategies
-++++++++++++++++++++++++++++++++++++++++
-
 In this setting, we provide eight strategy templates, the competitor would need to choose the optimal strategy though specifying the templates and parameters.
+
 
 Strategy Templates
 ++++++++++++++++++
@@ -66,8 +64,9 @@ We provide the following mobility parameters to intervene:
 Get started with your own specification
 #######################################
 You can conduct the experiment by running the following commands in the config file of the simulator, with options listed here to select different strategies and parameters.
+
 +---------------------------------------+--------------------------------------------------------------+
-| --help                                | Show this help message                                       |
+|                                       | Show this help message                                       |
 +=======================================+==============================================================+
 | --totalRounds                         | How many times to run the whole experiment                   |
 +---------------------------------------+--------------------------------------------------------------+
