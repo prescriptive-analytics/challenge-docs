@@ -1,6 +1,6 @@
 .. _start:
 
-Strategy Templates
+Simple Strategy with Templates
 ***************
 
 We provide eight strategy templates, the competitor would need to choose the optimal strategy though specifying the templates and parameters.
