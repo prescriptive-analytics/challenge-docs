@@ -21,7 +21,7 @@ We first define two basic metrics:
 - :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \frac{\lambda_h Home + Isolated} {\lambda_h + 1}`.)
 
 Based on these two basic metrics, we calculate the following score for this competition.
-- :math:`\#_{infected} + \lambda \times \#_{quarantined}`: The weighted sum of :math:`I` and :math:`Q`, :math:`\lambda` is a predefined factor.
+- :math:`I + \lambda \times Q`: The weighted sum of :math:`I` and :math:`Q`, :math:`\lambda` is a predefined factor.
 
 
 

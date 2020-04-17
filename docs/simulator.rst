@@ -11,13 +11,27 @@ On working days, a person will start from home to working POI at a certain time 
 
 On weekends, people may visit a random commercial POI within the whole city at a certain time :math:`T^e_{start} \sim Uniform(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim Uniform (t^e_{c1}, t^e_{c2})` hours. After that, they will return residential POI.
 
++----------+---+----------+---+-----------+-----+-----------+-----+
+| t^d_{s1} | 1 | t^d_{s2} | 2 | t_{w1}    |  7  | t_{w2}    | 10  |
++----------+---+----------+---+-----------+-----+-----------+-----+
+| t^d_{c1} | 1 | t^d_{c2} | 2 | t^e_{s1}  |  1  | t^e_{s2}  |  5  |
++----------+---+----------+---+-----------+-----+-----------+-----+
+| t^e_{c1} | 1 | t^e_{c2} | 2 | P^d_{com} | 0.1 | P^e_{com} | 0.3 |
++----------+---+----------+---+-----------+-----+-----------+-----+
 
 Disease Transmission Model
 ++++++++++++++++++++++++++
 The disease can transmit from an infected person through two kinds of contacts:
-- Acquaintance contacts: An individual has a fixed group of acquaintance contacts with size :math:`K_l \sim Uniform(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim Uniform(w_{c1}, w_{c2})` in his/her working POI. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
-- Stranger contacts: An individual could be in contact with :math:`K` strangers visiting the same type of POI in the same region at the same time. At each timestamp, there is probability :math:`P_s` for a person to get infected from an infected stranger contact. 
 
+- Acquaintance contacts: An individual has a fixed group of acquaintance contacts with size :math:`K_l \sim Uniform(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim Uniform(w_{c1}, w_{c2})` in his/her working POI. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
+
+- Stranger contacts: An individual could be in contact with strangers visiting the same type of POI in the same region at the same time. At each timestamp, there is probability :math:`P_s` for a person to get infected from an infected stranger contact. 
+
++---------+---------+---------+---+---------+--------+---------+----+
+| l_{c_1} | 1       | l_{c_2} | 6 | w_{c_1} | 5      | w_{c_2} | 15 |
++---------+---------+---------+---+---------+--------+---------+----+
+| P_c     | 0.00033 |         |   | P_s     | 0.00005|         |    |
++---------+---------+---------+---+---------+--------+---------+----+
 
 Health status of a person
 +++++++++++++++++++++++++
@@ -37,6 +51,9 @@ An individual’s health status follows the stages below:
 - Stage 5. Recovered 
     * From Stage 4 to Stage 5, there is a fixed hospitalized time period of :math:`TREAT` days after he/she is sent to the hospital.
 
++-----+---+-----+---+-----+---+-------+-----+
+| INC | 2 | d_1 | 1 | d_2 | 2 | TREAT | inf |
++-----+---+-----+---+-----+---+-------+-----+
 
 Mobility Intervention Actions
 ++++++++++++++++++++++++++++++
