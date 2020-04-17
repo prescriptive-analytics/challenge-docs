@@ -1,7 +1,9 @@
-Quick Start with Simple Rules
+.. _start:
+
+Strategy Templates
 ***************
 
-In this setting, we provide eight strategy templates, the competitor would need to choose the optimal strategy though specifying the templates and parameters.
+We provide eight strategy templates, the competitor would need to choose the optimal strategy though specifying the templates and parameters.
 
 
 Strategy Templates

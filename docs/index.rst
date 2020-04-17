@@ -14,7 +14,7 @@ Contents:
 
    introduction
    simulator
-   start
    install
+   start
    startpython
    replay
