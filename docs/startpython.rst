@@ -56,20 +56,19 @@ Sample Config File
 .. code-block:: json
 
       {
-
-        "strategy": "100010001",
+        "strategy": "12323",
         "daysToTrack": 5,
         "startIntervene": 1,
         "regionInfectedThresForStrangerContact": 1,
         "daysToTreat": 1e9,
-        "daysToIsolate": 1,
-        "daysToQuarantine": 1,
-        "daysToConfine": 1,
+        "daysToIsolate": 15,
+        "daysToQuarantine": 15,
+        "daysToConfine": 15,
 
         "seed": 1,
         "dir": "./examples",
         "predefinedStrategy": true,
-        "saveReplay": true,
+        "saveReplay": false,
         "results_dir": "results",
         "save_replay_dir": "",
 
@@ -238,7 +237,7 @@ Here we provide a sample code for running our simulator, which can be found [her
     config_file = os.path.join("examples", "config.json")
     period = 100
 
-    engine = simulator.Engine(config_file=config_file)
+    engine = simulator.Engine(config_file=config_file, thread_num = 1)
 
     print("here")
 
@@ -253,7 +252,7 @@ Here we provide a sample code for running our simulator, which can be found [her
 
         engine.set_man_confine_days({1: 5}) # {manID: day}
         engine.set_man_isolate_days({1: 5}) # {manID: day}
-        engine.set_man_hospitalize_days({1: 5}) # {manID: day}
+        engine.set_man_to_treat({1: True}) # {manID: bool}
 
 
     del engine

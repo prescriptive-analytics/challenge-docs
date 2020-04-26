@@ -14,7 +14,7 @@ Here, we provide an example intervention strategy, with different actions on dif
 We can define the following six groups of people based on their levels of health risks: 
 
 - G1: Infected (critical)
-- G2: Infected (discovered)
+- G2: Infected (symptomatic)
 - G3: Acquaintance contact of G1
 - G4: Stranger contact of G1
 - G5: Acquaintance contact of G2
@@ -24,33 +24,27 @@ We can choose to take the following three actions to them:
 
 - A0: Free
 - A1: Confine
-- A2: Quarantine (todo)
+- A2: Quarantine
 - A3: Isolate
 - A4: Hospitalized
 
 Based on these definitions, we have provided 8 strategies to intervene the actions of certain groups of people:
 
-+--------------------------+---------+------------+---------------+------------+----------------+
-|                          | A0:Free | A1:Confine | A2:Quarantine | A3:Isolate | A4:Hospitalize |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G1: Critital             |         |            |               |            | S1             |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G2: Discovered           |         |            |               |            | S4             |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G3: Aquantaince Contacts |         | S3         |               | S2         |                |
-| of Critical              |         |            |               |            |                |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G4: Simple Contacts of   |         | S8         |               | S7         |                |
-| Critital                 |         |            |               |            |                |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G5: Aquantaince Contacts |         | S6         |               | S5         |                |
-| of Discovered            |         |            |               |            |                |
-+--------------------------+---------+------------+---------------+------------+----------------+
-| G6:Simple Contacts       |         |            |               |            |                |
-| of Discovered            |         |            |               |            |                |
-+--------------------------+---------+------------+---------------+------------+----------------+
++--------------------------------------------+--------------------------------------------------------+-----------------+
+| Health Status                              | Action                                                 | Position of Bit |
++============================================+========================================================+=================+
+| Critical                                   | 0: No intervene; 1:Hospitalize                         | 0               |
++--------------------------------------------+--------------------------------------------------------+-----------------+
+| Symptomatic                                | 0: No intervene; 1: Isolate; 2: Hospitalize            | 1               |
++--------------------------------------------+--------------------------------------------------------+-----------------+
+| Acquaintance contacts of critical cases    | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 2               |
++--------------------------------------------+--------------------------------------------------------+-----------------+
+| Stranger contacts of critical cases        | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 3               |
++--------------------------------------------+--------------------------------------------------------+-----------------+
+| Acquaintance contacts of symptomatic cases | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 4               |
++--------------------------------------------+--------------------------------------------------------+-----------------+
 
-We use an 8-bit binary string to represent the policy. Each bit represents whether the corresponding strategy is selected. For instance, “11000000” represents that S1 and S2 are selected. Note that, when multiple strategies are applied to the same group of people, the more strict one will take effect. For instance, if S2 and S5 are selected, only S2 will take effect.
+We use an 5-bit binary string to represent the policy. Each bit represents whether the corresponding strategy is selected. For instance, “21000” represents that "To hospitalize the critical cases and isolate the symptomatic cases". Note that, when multiple strategies are applied to the same person, the more strict one will take effect.
 
 Intervening Parameters
 ++++++++++++++++++++++

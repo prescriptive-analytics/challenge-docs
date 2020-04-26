@@ -37,22 +37,40 @@ Health status of a person
 +++++++++++++++++++++++++
 An individual’s health status follows the stages below:
 
-- Stage 1. Susceptible 
++-----------------------------+------------------------------+----------+------------+----------+--------+
+| Health status               | Description                  | Infected | Contagious | Symptoms | Immune |
++=============================+==============================+==========+============+==========+========+
+| Susceptible case            | liable to be infected        | -        | -          | -        | -      |
++-----------------------------+------------------------------+----------+------------+----------+--------+
+| Pre-symptomatic             | before the onset of symptoms | ✔        | ✔          | -        | -      |
+| infected case               |                              |          |            |          |        |
++-----------------------------+------------------------------+----------+------------+----------+--------+
+| Symptomatic infected case   | showing signs and symptoms   | ✔        | ✔          | ✔        | -      |
+|                             | compatible with infection    |          |            |          |        |
++-----------------------------+------------------------------+----------+------------+----------+--------+
+| Symptomatic infected cases  | symptomatic with severe      | ✔        | ✔          | ✔        | -      |
+| with critical condition     | acute respiratory illness    |          |            |          |        |
++-----------------------------+------------------------------+----------+------------+----------+--------+
+| Recovered                   | recovered and resistant      | -        | -          | -        | ✔      |
++-----------------------------+------------------------------+----------+------------+----------+--------+
 
-- Stage 2. Infected and undiscovered
+
+- Stage 1. **Susceptible**: Liable to be infected
+
+- Stage 2. **Pre-symptomatic** infected: Infected and undiscovered
     * From Stage 1 to Stage 2, people can get infected via contact with infected people, with different probabilities from their contacts.
 
-- Stage 3. Infected and discovered 
+- Stage 3. **Symptomatic** infected:  Infected and showing signs and symptoms
     * From Stage 2 to Stage 3, there is a fixed incubation period of :math:`INC` days.
 
-- Stage 4. Infected and critical
+- Stage 4. Symptomatic infected with **critical** condition
     * From Stage 3 to Stage 4, there is a development time period :math:`d \sim Normal(d_1, d_2)`.
 
-- Stage 5. Recovered 
+- Stage 5. **Recovered**: recovered and resistant
     * From Stage 4 to Stage 5, there is a fixed hospitalized time period of :math:`TREAT` days after he/she is sent to the hospital.
 
 +-----+---+-----+---+-----+---+-------+-----+
-| INC | 2 | d_1 | 1 | d_2 | 2 | TREAT | inf |
+| INC | 3 | d_1 | 2 | d_2 | 3 | TREAT | inf |
 +-----+---+-----+---+-----+---+-------+-----+
 
 Mobility Intervention Actions
