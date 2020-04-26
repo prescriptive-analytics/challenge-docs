@@ -18,20 +18,11 @@ We can define the following six groups of people based on their levels of health
 - G3: Acquaintance contact of G1
 - G4: Stranger contact of G1
 - G5: Acquaintance contact of G2
-- G6: Stranger contact of G2
-
-We can choose to take the following three actions to them:
-
-- A0: Free
-- A1: Confine
-- A2: Quarantine
-- A3: Isolate
-- A4: Hospitalized
 
 Based on these definitions, we have provided 8 strategies to intervene the actions of certain groups of people:
 
 +--------------------------------------------+--------------------------------------------------------+-----------------+
-| Health Status                              | Action                                                 | Position of Bit |
+| Health Status                              | Code for Action and meaning                            | Position of Bit |
 +============================================+========================================================+=================+
 | Critical                                   | 0: No intervene; 1:Hospitalize                         | 0               |
 +--------------------------------------------+--------------------------------------------------------+-----------------+
