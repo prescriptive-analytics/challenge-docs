@@ -1,5 +1,7 @@
 Simulator
 *********
+The infection spread in this simulator is modeled according to what is known about COVID-19. The assumptions about the COVID-19 spread and mobility implemented in the simulator are based on the published research as well as interactions with the epidemiologists. We plan to update the simulator as more and more about COVID-19 will be known.
+
 The simulator simulates individual mobility in a city of :math:`R` Regions with :math:`M` people. Each region consists of several POIs, where each POI can contains three types of POIs: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
 
@@ -72,6 +74,13 @@ An individual’s health status follows the stages below:
 +-----+---+-----+---+-----+---+-------+-----+
 | INC | 3 | d_1 | 2 | d_2 | 3 | TREAT | inf |
 +-----+---+-----+---+-----+---+-------+-----+
+
+
+
+.. note::
+	Terms are  in align with recent variations of the Susceptible-Infected-Resistant (SIR) compartment models in the context of COVID-19 modeling and WHO guidelines:
+	[1] Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
+	[2] World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
 
 Mobility Intervention Actions
 ++++++++++++++++++++++++++++++

@@ -1,7 +1,8 @@
 COVID-19 Challenge
 ======================
+In response to the current world-wide concern of coronavirus, we host this challenge on finding the best intervention policy to fight against the coronavirus pandemic. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which is provided to the global research community to apply recent advances in data science and AI to generate new insights in support of the ongoing fight against this infectious disease. 
 
-In response to the current world-wide concern of coronavirus, we would like to host a challenge on prescriptive analytics for coronavirus. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
+The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
 
 
 
