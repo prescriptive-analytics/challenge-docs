@@ -29,7 +29,7 @@ The disease can transmit from an infected person through two kinds of contacts:
 
 - Stranger contacts: An individual could be in contact with strangers visiting the same type of POI in the same region at the same time. At each timestamp, there is probability :math:`P_s` for a person to get infected from an infected stranger contact. 
 
-+-----------------+---------+-----------------+---+-------- --------+--------+-----------------+----+
++-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`P_c`     | 0.00033 |                 |   | :math:`P_s`     | 0.00005|     --------    |    |
