@@ -3,18 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Read the COVID-19 Challenge!
+Welcome to the Mobility Intervention of Epidemics Challenge!
 ==================================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    introduction
-   simulator
-   start
-   install
-   startpython
-   replay
+   simulator_modeling
+   try
+   api

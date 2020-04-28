@@ -1,6 +1,6 @@
-COVID-19 Challenge
+Mobility Intervention of Epidemics Challenge
 ======================
-In response to the current world-wide concern of coronavirus, we host this challenge on finding the best intervention policy to fight against the coronavirus pandemic. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which is provided to the global research community to apply recent advances in data science and AI to generate new insights in support of the ongoing fight against this infectious disease. 
+In response to the current world-wide concern of COVID-19, we host this challenge on finding the best intervention policy to fight against the pandemic. The challenge will be evaluated on a human mobility and epidemic transmission simulator, which is provided to the global research community to apply recent advances in data science and AI to generate new insights in support of the ongoing fight against this infectious disease. 
 
 The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
 
@@ -26,17 +26,11 @@ Based on these two basic metrics, we calculate the following score for this comp
 
 
 
-Contribute
-----------
-
-- Issue Tracker: https://github.com/gjzheng93/COVID/issues
-- Source Code: https://github.com/gjzheng93/COVID/
-
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: coronavirus-changllenge@google-groups.com
+We have a mailing list located at: coronavirus-chagllenge@google-groups.com
 
 License
 -------
