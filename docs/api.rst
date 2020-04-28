@@ -109,18 +109,22 @@ Intervention API
 
 ``set_man_isolate_days(days_to_isolate)``: 
 
-- Args: days_to_isolate - a dictionary with manID as key and days for each person to be isolated as value.
+- Args: days_to_isolate 
+- a dictionary with manID as key and days for each person to be isolated as value.
 
 ``set_man_quarantine_days(days_to_quarantine)``:
 
-- Args: days_to_quarantine - a dictionary with manID as key and days for each person to be quarantined as value.
+- Args: days_to_quarantine 
+- a dictionary with manID as key and days for each person to be quarantined as value.
 
 ``set_man_confine_days(days_to_confine)``:
 
 - Args: days_to_confine - a dictionary with manID as key and days for each person to be confined as value.
 
 ``set_man_to_treat(if_treat)``
-- Args: if_treat - a dictionary with manID as key and whether he/she is sent to be treated as value.
+
+- Args: if_treat 
+- a dictionary with manID as key and whether he/she is sent to be treated as value.
 
 
 
