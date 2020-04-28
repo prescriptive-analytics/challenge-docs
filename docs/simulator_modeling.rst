@@ -13,13 +13,13 @@ On working days, a person will start from home to working POI at a certain time 
 
 On weekends, people may visit a random commercial POI within the whole city at a certain time :math:`T^e_{start} \sim Uniform(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim Uniform (t^e_{c1}, t^e_{c2})` hours. After that, they will return residential POI.
 
-+----------+---+----------+---+-----------+-----+-----------+-----+
-| t^d_{s1} | 1 | t^d_{s2} | 2 | t_{w1}    |  7  | t_{w2}    | 10  |
-+----------+---+----------+---+-----------+-----+-----------+-----+
-| t^d_{c1} | 1 | t^d_{c2} | 2 | t^e_{s1}  |  1  | t^e_{s2}  |  5  |
-+----------+---+----------+---+-----------+-----+-----------+-----+
-| t^e_{c1} | 1 | t^e_{c2} | 2 | P^d_{com} | 0.1 | P^e_{com} | 0.3 |
-+----------+---+----------+---+-----------+-----+-----------+-----+
++------------------+---+------------------+---+-------------------+-----+-------------------+-----+
+| :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 2 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
++------------------+---+------------------+---+-------------------+-----+-------------------+-----+
+| :math:`t^d_{c1}` | 1 | :math:`t^d_{c2}` | 2 | :math:`t^e_{s1}`  |  1  | :math:`t^e_{s2}`  |  5  |
++------------------+---+------------------+---+-------------------+-----+-------------------+-----+
+| :math:`t^e_{c1}` | 1 | :math:`t^e_{c2}` | 2 | :math:`P^d_{com}` | 0.1 | :math:`P^e_{com}` | 0.3 |
++------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 
 Disease Transmission Model
 ++++++++++++++++++++++++++
@@ -29,11 +29,11 @@ The disease can transmit from an infected person through two kinds of contacts:
 
 - Stranger contacts: An individual could be in contact with strangers visiting the same type of POI in the same region at the same time. At each timestamp, there is probability :math:`P_s` for a person to get infected from an infected stranger contact. 
 
-+---------+---------+---------+---+---------+--------+---------+----+
-| l_{c_1} | 1       | l_{c_2} | 6 | w_{c_1} | 5      | w_{c_2} | 15 |
-+---------+---------+---------+---+---------+--------+---------+----+
-| P_c     | 0.00033 |         |   | P_s     | 0.00005|         |    |
-+---------+---------+---------+---+---------+--------+---------+----+
++-----------------+---------+-----------------+---+-------- --------+--------+-----------------+----+
+| :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
++-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
+| :math:`P_c`     | 0.00033 |                 |   | :math:`P_s`     | 0.00005|     --------    |    |
++-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 
 Health status of a person
 +++++++++++++++++++++++++
@@ -71,16 +71,17 @@ An individual’s health status follows the stages below:
 - Stage 5. **Recovered**: recovered and resistant
     * From Stage 4 to Stage 5, there is a fixed hospitalized time period of :math:`TREAT` days after he/she is sent to the hospital.
 
-+-----+---+-----+---+-----+---+-------+-----+
-| INC | 3 | d_1 | 2 | d_2 | 3 | TREAT | inf |
-+-----+---+-----+---+-----+---+-------+-----+
++-------------+---+-------------+---+-------------+---+---------------+-----+
+| :math:`INC` | 3 | :math:`d_1` | 2 | :math:`d_2` | 3 | :math:`TREAT` | inf |
++-------------+---+-------------+---+-------------+---+---------------+-----+
 
 
 
 .. note::
 	Terms are  in align with recent variations of the Susceptible-Infected-Resistant (SIR) compartment models in the context of COVID-19 modeling and WHO guidelines:
-	[1] Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
-	[2] World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
+
+	1. Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
+	2. World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
 
 Mobility Intervention Actions
 ++++++++++++++++++++++++++++++
