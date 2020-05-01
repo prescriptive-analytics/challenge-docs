@@ -277,7 +277,7 @@ Here we provide a sample code for running our simulator, which can be found [her
 Results
 =======
 
-During simulation, the simulator will generate the submission file `sub_xxx.txt` and visualization files.
+During simulation, the simulator will generate the submission file ``sub_xxx.txt`` and visualization files.
 
 
 Submission
@@ -289,7 +289,7 @@ Before submission, make sure:
 
 - This script will run 10 times of the experiments. 
 
-- Please upload the sub_xxx.txt to the website.
+- Please upload the ``sub_xxx.txt`` to the website.
 
 
 
@@ -304,11 +304,11 @@ Start
 
 1. enter the ``frontend`` folder and open ``index.html`` in your browser.
 
-2. choose the replay log file `xxx_replay_0.txt` under `results/log`, 
+2. choose the replay log file ``xxx_replay_0.txt`` under ``results/log``, 
 
-2. choose city visualization file `w_small_visual.json`, and wait for it to be loaded. When it has finished loading, there will be a message shown in the info box.
+3. choose city visualization file ``w_small_visual.json``, and wait for it to be loaded. When it has finished loading, there will be a message shown in the info box.
 
-4. choose the chart data file `cnt_xxx.txt` (optional, see section *Chart* below).
+4. choose the chart data file ``cnt_xxx.txt`` (optional, see section *Chart* below).
 
 5. press ``Start`` button to start the replay.
 
