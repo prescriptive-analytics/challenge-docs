@@ -1,6 +1,8 @@
 Try it yourself
 *********
 
+We provide a [Starter-Kit](https://github.com/prescriptive-analytics/starter-kit) as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+
 
 Installation Guide
 ==================
