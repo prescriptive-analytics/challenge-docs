@@ -12,23 +12,26 @@ Simualtor has little dependencies, so building from source is not scary.
 1. Check that you have python 3 installed. Other version of python might work, however, we only tested on python with version >= 3.5.
 
 
-2. Preparation
-
-Mac OS: `brew install boost`
-
-Linux: `sudo apt-get install libboost-dev`
-
-Windows: Please refer to [install-boost-build](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build)
-
-
-3. Clone Starter-Kit from GitHub.
+2. Install cpp dependencies
 
 .. code-block:: shell
     
-    git clone https://github.com/prescriptive-analytics/starter-kit.git
+    sudo apt update && sudo apt install -y build-essential cmake
 
+3. Clone Simualtor project from github.
+
+.. code-block:: shell
     
-4. Go to Simualtor project's root directory and run the following to test the installation
+    git clone https://github.com/wingsweihua/COVID.git
+    git checkout wrapping
+    
+4. Go to Simualtor project's root directory and run
+
+.. code-block:: shell
+    
+    pip install .
+
+5. Wait for installation to complete and CityFlow should be successfully installed.
 
 .. code-block:: python
     
@@ -248,25 +251,30 @@ Here we provide a sample code for running our simulator, which can be found [her
 
     import simulator
     import os
-    import json
 
-    period = 840
+    # os.chdir(os.path.join("..", ".."))
+    # print(os.getcwd())
 
-    engine = simulator.Engine()
+    config_file = os.path.join("examples", "config.json")
+    period = 100
+
+    engine = simulator.Engine(config_file=config_file, thread_num = 1)
+
+    print("here")
 
     engine.reset()
     for i in range(period):
         engine.next_step()
-        print(engine.get_current_time())
-        print(engine.get_man_visited_history(1))
-        print(engine.get_man_infection_state(1))
-        print(engine.get_man_visited_history(1))
-        print(engine.get_region_infected_cnt(1))
+        print("engine.getCurrentTime()", engine.get_current_time())
+        print("engine.getRegionVisitedHis(1)", engine.get_man_visited_history(1))
+        print("engine.getManInfectionState(1)", engine.get_man_infection_state(1))
+        print("engine.getManVisitedHis(1)", engine.get_man_visited_history(1))
+        print("engine.getRegionInfectedCnt(1)", engine.get_region_infected_cnt(1))
 
         engine.set_man_confine_days({1: 5}) # {manID: day}
-        engine.set_man_quarantine_days({2: 5}) # {manID: day}
-        engine.set_man_isolate_days({3: 5}) # {manID: day}
-        engine.set_man_to_treat({4: True}) # {manID: day}
+        engine.set_man_isolate_days({1: 5}) # {manID: day}
+        engine.set_man_to_treat({1: True}) # {manID: bool}
+
 
     del engine
 
@@ -275,19 +283,8 @@ Here we provide a sample code for running our simulator, which can be found [her
 Results
 =======
 
-During simulation, the simulator will generate the submission file `sub_xxx.txt` and visualization files.
-
-
-Submission
+Score
 -----
-
-Before submission, make sure:
-
-- You are running the simulation for 840 time steps (60 simulation days in simulator). 
-
-- This script will run 10 times of the experiments. 
-
-- Please upload the sub_xxx.txt to the website.
 
 
 
@@ -302,14 +299,13 @@ Start
 
 1. enter the ``frontend`` folder and open ``index.html`` in your browser.
 
-2. choose the replay log file `xxx_replay_0.txt` under `results/log`, 
+2. choose the replay log file (as defined by ``City Visualization File`` field in the config file, **not 'relayLogFile'**) and wait for it to be loaded. When it has finished loading, there will be a message shown in the info box.
 
-2. choose city visualization file `w_small_visual.json`, and wait for it to be loaded. When it has finished loading, there will be a message shown in the info box.
+3. choose the replay file (as defined by ``replayLogFile`` field in the config file) .
 
-4. choose the chart data file `cnt_xxx.txt` (optional, see section *Chart* below).
+4. choose the chart data file (optional, see section *Chart* below).
 
 5. press ``Start`` button to start the replay.
-
 
 Control
 ^^^^^^^

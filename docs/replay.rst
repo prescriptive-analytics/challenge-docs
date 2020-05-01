@@ -41,11 +41,45 @@ The player supports showing the change of different metrics in a chart simultane
 
 To provide required data, a log file in a format as shown below is needed:
 
-.. code-block:: python
-
-	day:0, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:198, CurrentInfected:3
-	day:1, hospitalizeNum:0, isolateNum:0, quarantineNum:0, confineNum:0, free:201, CurrentHealthy:197, CurrentInfected:4
-
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| #  | Name               | Data Tpye | Example Data | Description                                             |
++====+====================+===========+==============+=========================================================+
+| 0  | day                | int       | 0            | Current day in simulation                               |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 1  | hospitalizeNum     | int       | 0            | # of hospitalized people                                |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 2  | isolateNum         | int       | 0            | # of isolated people                                    |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 3  | quarantineNum      | int       | 0            | # of quarantined people                                 |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 4  | confineNumfree_num | int       | 0            | # of confined people                                    |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 5  | free               | int       | 201          | # of people without intervention                        |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 6  | CurrentHealthy     | int       | 199          | # of people that are not infected                       |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 7  | CurrentInfected    | int       | 2            | # of infected cases                                     |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 8  | CurrentSusceptible | int       | 199          | # of susceptible people                                 |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 9  | CurrentIncubation  | int       | 2            | # of pre-symptomatic cases                              |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 10 | CurrentDiscovered  | int       | 0            | # of symptomatic cases                                  |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 11 | CurrentCritical    | int       | 0            | # of critical cases                                     |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 12 | CurrentRecovered   | int       | 0            | # of recovered cases                                    |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 13 | AccDiscovered      | int       | 0            | Accumulated # of symptomatic cases                      |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 14 | AccCritical        | int       | 0            | Accumulated # of critical cases                         |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 15 | AccAcquaintance    | int       | 0            | Accumulated # of infected through stranger contacts     |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 16 | AccStranger        | int       | 0            | Accumulated # of infected through acquaintance contacts |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
+| 17 | measurement        | int       | 2            | an example measurement                                  |
++----+--------------------+-----------+--------------+---------------------------------------------------------+
 
 
 Each row stands for one day and each column stands for a specific metric.
