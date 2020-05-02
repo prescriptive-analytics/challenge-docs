@@ -356,17 +356,28 @@ Each row stands for one day and each column stands for a specific metric.
 In one row, numbers are separated by one comma.
 
 2. `hex_cnt_xxxx.csv`: Region-level replay data file.
-
-| #  | header         | Data Tpye | Example Data | Description                      |
-|----|----------------|-----------|--------------|----------------------------------|
-| 0  | day            | int       | 0            | Current day in simulation        |
-| 1  | poi_id         | int       | 0            | POI id                           |
-| 2  | lat            | double    | 114.05019    | latitude                         |
-| 3  | lng            | double    | 30.445043    | langitude                        |
-| 4  | allsusceptible | int       | 26           | # of susceptible cases           |
-| 5  | allincubation  | int       | 0            | # of pre-symptomatic cases       |
-| 6  | alldiscovered  | int       | 0            | # of discovered cases            |
-| 7  | allcritical    | int       | 0            | # of critical cases              |
-| 8  | allrecovered   | int       | 0            | # of recovered cases             |
-| 9  | allinfect      | int       | 0            | # of infected cases              |
-| 10 | free_num       | int       | 26           | # of people without intervention |
++----+--------------------+-----------+--------------+----------------------------------+
+| #  | header             | Data Tpye | Example Data | Description                      |
++----+--------------------+-----------+--------------+----------------------------------+
+| 0  | day                | int       | 0            | Current day in simulation        |
++----+--------------------+-----------+--------------+----------------------------------+
+| 1  | poi_id             | int       | 0            | POI id                           |
++----+--------------------+-----------+--------------+----------------------------------+
+| 2  | lat                | double    | 114.05019    | latitude                         |
++----+--------------------+-----------+--------------+----------------------------------+
+| 3  | lng                | double    | 30.445043    | langitude                        |
++----+--------------------+-----------+--------------+----------------------------------+
+| 4  | CurrentSusceptible | int       | 26           | # of susceptible cases           |
++----+--------------------+-----------+--------------+----------------------------------+
+| 5  | CurrentIncubation  | int       | 0            | # of pre-symptomatic cases       |
++----+--------------------+-----------+--------------+----------------------------------+
+| 6  | CurrentDiscovered  | int       | 0            | # of discovered cases            |
++----+--------------------+-----------+--------------+----------------------------------+
+| 7  | CurrentCritical    | int       | 0            | # of critical cases              |
++----+--------------------+-----------+--------------+----------------------------------+
+| 8  | CurrentRecovered   | int       | 0            | # of recovered cases             |
++----+--------------------+-----------+--------------+----------------------------------+
+| 9  | CurrentInfected    | int       | 0            | # of infected cases              |
++----+--------------------+-----------+--------------+----------------------------------+
+| 10 | free               | int       | 26           | # of people without intervention |
++----+--------------------+-----------+--------------+----------------------------------+
