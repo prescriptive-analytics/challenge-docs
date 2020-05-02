@@ -36,34 +36,34 @@ Data Access API
 
 
 
-``get_region_visited_history(regionID)``:
+``get_region_visited_history(PoiID)``:
 
-- Args: regionID - id for region
-- Return: a 2D list of the visited history of one region. Each of the inner 1D list represents the history for one hour. [[manID1, manID2, manID3, ...], [manID7, manID8,]]
+- Args: PoiID - id for the POI
+- Return: a 2D list of the visited history of one POI. Each of the inner 1D list represents the history for one hour. [[manID1, manID2, manID3, ...], [manID7, manID8,]]
 
 
 ``get_man_visited_history(manID)``:
 
 - Args: manID
-- Return: a 1D list of the id of the regions that he/she has visited. 
-[regionID1, regionID2, ...]
+- Return: a 1D list of the id of the POIs that he/she has visited. 
+[poiID1, poiID2, ...]
 
 
 ``get_man_visited_history_with_p_infection(manID)``:
 
 - Args: manID
-- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the regions that he/she has visited. 
+- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the POIs that he/she has visited. 
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
 ``get_region_contained_man()``:
 
-- Return: a dictionary with region id as the key, and the list of manID who live in this region as the value 
+- Return: a dictionary with POI id as the key, and the list of manID who live in this POI as the value 
 
-``get_region_infected_cnt(regionID)``:
+``get_region_infected_cnt(poiID)``:
 
-- Args: regionID
-- Return: an int representing the number of infected people in this region
+- Args: poiID
+- Return: an int representing the number of infected people in this POI
 
 
 ``get_life_count()``:

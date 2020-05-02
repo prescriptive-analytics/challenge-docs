@@ -65,14 +65,14 @@ Based on these definitions, we have provided 8 strategies to intervene the actio
 +--------------------------------------------+--------------------------------------------------------+-----------------+
 | Symptomatic                                | 0: No intervene; 1: Isolate; 2: Hospitalize            | 1               |
 +--------------------------------------------+--------------------------------------------------------+-----------------+
-| Acquaintance contacts of critical cases    | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 2               |
+| Acquaintance contacts of critical cases    | 0: No intervene; 1: Confine; 2. Quarantine; 3: Isolate | 2               |
 +--------------------------------------------+--------------------------------------------------------+-----------------+
-| Stranger contacts of critical cases        | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 3               |
+| Stranger contacts of critical cases        | 0: No intervene; 1: Confine; 2. Quarantine; 3: Isolate | 3               |
 +--------------------------------------------+--------------------------------------------------------+-----------------+
-| Acquaintance contacts of symptomatic cases | 0: No intervene; 1: Confine; 2. Quatantine; 3: Isolate | 4               |
+| Acquaintance contacts of symptomatic cases | 0: No intervene; 1: Confine; 2. Quarantine; 3: Isolate | 4               |
 +--------------------------------------------+--------------------------------------------------------+-----------------+
 
-We use an 5-bit binary string to represent the policy. Each bit represents whether the corresponding strategy is selected. For instance, “21000” represents that "To hospitalize the critical cases and isolate the symptomatic cases". Note that, when multiple strategies are applied to the same person, the more strict one will take effect.
+We use an 5-bit binary string to represent the policy. Each bit represents whether the corresponding strategy is selected. For instance, “12000” represents that "To hospitalize the critical cases and isolate the symptomatic cases". Note that, when multiple strategies are applied to the same person, the more strict one will take effect.
 
 Intervening Parameters
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -163,57 +163,11 @@ Initiate engine
 .. code-block:: python
     
     import simulator
-    eng = simulator.Engine(config_path, thread_num=1)
+    eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="exmample")
 
-
-- ``config_path``: path for config file.
 - ``thread_num``: number of threads.
-
-Arguments In Config File
-^^^^^^^^^^^^^^^^^^^^^^^^
-- ``help``: Show this help message
-
-
-- ``strategy``: A binary string to specify the different strategy templates to conduct. The meanings of the binary string can be found here: :ref:`start`.
-- ``startIntervene``: Specify the day to start intervention 
-- ``daysToTrack``: # days to trace back when looking for the contacts of the confirmed case
-- ``daysToTreat``: # days to treat at hospotal before immume
-- ``daysToIsolate``: # days to force people isolate at home
-- ``daysToQuarantine``: # days to force people stay at home
-- ``daysToConfine``: # days to force people stay within community
-- ``regionInfectedThresForStrangerContact: If one region has confirmed cases more than this threshold, policies on this region will take effect (e.g., quarantine)
-
-- ``seed``: Experiment seed,
-- ``dir``: File directory for reading configs and writing logs, default "./examples"
-- ``predefinedStrategy``: whether to use pre-defined strategy templates, default "true"
-- ``saveReplay``: whether to save logs for replay simulation, default "true"
-- ``results_dir``: File directory name under ``dir`` for saving measurement results, default "results"
-- ``save_replay_dir``: File directory name under ``dir`` for saving logs, default "".
-
-- ``POI_file``: POI file to read, default "w_small.txt" with 33 POIs,
-- ``population``: Population, default 200,
-- ``total_step``: Total simulation steps, default 840,
-- ``location_file``: Location definition file for visualization, default "w_small_visual.json"
-
-        
-Sample Config File
-^^^^^^^^^^^^^^^^^^^
-
-.. note::
-    Runnable sample config files can be found in ``examples`` folder.
-
-.. code-block:: json
-
-{
-
-    "regionsFile": "sample1_regions.csv",
-    "dailyStatsFile": "sample1_daily_stats.csv",
-    "regionStatsFile": "sample1_region_stats.csv"
-
-    "population": 10000,
-    "total_step": 840,
-}
-
+- ``specified_run_name``: results saving folder name.
+- ``write_mode``: mode of saving simulation results, ``write`` will overwrite results from different rounds of simulation in the same ``specified_run_name`` folder, ``append`` will append the results from current simulation round to existing result files.
 
 
 Simulate one step
