@@ -232,7 +232,7 @@ To simulate one step, simply call ``eng.next_step()``
 Sample Codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found [here](https://github.com/gjzheng93/COVID/blob/wrapping/tests/python/test_api.py).
+Here we provide a sample code for running our simulator, which can be found [here]https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py).
 
 .. code-block:: python
 
@@ -271,13 +271,17 @@ During simulation, the simulator will generate the submission file ``sub_xxx.txt
 Submission
 -----
 
-Before submission, make sure:
 
+Before submission, make sure:
+ 
 - You are running the simulation for 840 time steps (60 simulation days in simulator). 
 
-- This script will run 10 times of the experiments. 
+- Run 10 times of the experiments and set the engine write mode to "append" with ``simulator.Engine(write_mode="append")``. 
 
 - Please upload the ``sub_xxx.txt`` to the website.
+
+
+Here we provide a sample code of simulation that matches with submission requirements, which can be found [here]https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py).
 
 
 
