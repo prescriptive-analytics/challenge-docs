@@ -42,6 +42,13 @@ Data Access API
 [regionID1, regionID2, ...]
 
 
+``get_man_visited_history_with_p_infection(manID)``:
+
+- Args: manID
+- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the regions that he/she has visited. 
+[[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
+
+
 ``get_region_contained_man()``:
 
 - Return: a dictionary with region id as the key, and the list of manID who live in this region as the value 
