@@ -192,6 +192,7 @@ Arguments In Config File
 
 - ``POI_file``: POI file to read, default "w_small.txt" with 33 POIs,
 - ``population``: Population, default 200,
+- ``total_step``: Total simulation steps, default 840,
 - ``location_file``: Location definition file for visualization, default "w_small_visual.json"
 
         
@@ -203,28 +204,15 @@ Sample Config File
 
 .. code-block:: json
 
-      {
-        "strategy": "12323",
-        "daysToTrack": 5,
-        "startIntervene": 1,
-        "regionInfectedThresForStrangerContact": 1,
-        "daysToTreat": 1e9,
-        "daysToIsolate": 15,
-        "daysToQuarantine": 15,
-        "daysToConfine": 15,
+{
 
-        "seed": 1,
-        "dir": "./examples",
-        "predefinedStrategy": true,
-        "saveReplay": false,
-        "results_dir": "results",
-        "save_replay_dir": "",
+    "regionsFile": "sample1_regions.csv",
+    "dailyStatsFile": "sample1_daily_stats.csv",
+    "regionStatsFile": "sample1_region_stats.csv"
 
-
-        "POI_file": "w_small.txt",
-        "population": 200,
-        "location_file": "w_small_visual.json"
-      }
+    "population": 10000,
+    "total_step": 840,
+}
 
 
 
@@ -351,14 +339,10 @@ Their Formats are as follows:
 +----+--------------------+-----------+--------------+---------------------------------------------------------+
 
 
-Each row stands for one day and each column stands for a specific metric.
-
-In one row, numbers are separated by one comma.
-
 2. `hex_cnt_xxxx.csv`: Region-level replay data file.
 +----+--------------------+-----------+--------------+----------------------------------+
 | #  | header             | Data Tpye | Example Data | Description                      |
-+----+--------------------+-----------+--------------+----------------------------------+
++====+====================+===========+==============+==================================+
 | 0  | day                | int       | 0            | Current day in simulation        |
 +----+--------------------+-----------+--------------+----------------------------------+
 | 1  | poi_id             | int       | 0            | POI id                           |
