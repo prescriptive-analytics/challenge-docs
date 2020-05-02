@@ -281,7 +281,7 @@ Before submission, make sure:
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found [here]https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py).
+Here we provide a sample code of simulation that matches with submission requirements, which can be found [here](https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py).
 
 
 
