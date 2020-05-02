@@ -340,6 +340,7 @@ Their Formats are as follows:
 
 
 2. `hex_cnt_xxxx.csv`: Region-level replay data file.
+
 +----+--------------------+-----------+--------------+----------------------------------+
 | #  | header             | Data Tpye | Example Data | Description                      |
 +====+====================+===========+==============+==================================+
