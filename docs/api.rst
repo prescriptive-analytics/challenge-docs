@@ -25,7 +25,14 @@ Data Access API
 ``get_man_infection_state(manID)``:
 
 - Args: manID - id for man
-- Return: infection status of this man
+- Return: infection status of this man, ``1: susceptible``, ``2: pre-symptomatic``, ``3: symptomatic``, ``4: critical``, ``5: recovered``.
+
+
+``get_man_intervention_state(manID)``:
+
+- Args: manID - id for man
+- Return: instervention status of this man, ``0: no such man id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
+
 
 
 
