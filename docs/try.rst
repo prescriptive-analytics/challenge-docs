@@ -1,15 +1,11 @@
 Try it yourself
 *********
 
-We provide a [Starter-Kit](https://github.com/prescriptive-analytics/starter-kit) as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+We provide a `Starter-Kit<https://github.com/prescriptive-analytics/starter-kit>` as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
 
 
 Installation Guide
 ==================
-
-If you want to get nightly version of Simulator or running on native system, you can build Simulator from source. Currently, we only support building on Unix systems. This guide is based on Ubuntu 16.04.
-
-Simualtor has little dependencies, so building from source is not scary.
 
 1. Check that you have python 3 installed. Other version of python might work, however, we only tested on python with version >= 3.5.
 
@@ -20,7 +16,7 @@ Mac OS: `brew install boost`
 
 Linux: `sudo apt-get install libboost-dev`
 
-Windows: Please refer to [install-boost-build](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build)
+Windows: Please refer to `install-boost-build<https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build>`
 
 
 3. Clone Starter-Kit from GitHub.
@@ -48,12 +44,13 @@ Flexible strategy
 
 We provide flexible internvention strategies on individuals. You can intervene the mobility of an individual by setting his/her mobility with the following actions:
 
+- No intervention: The individual can move normally.
 - Confined: An individual is confined in the neighborhood that he/she lives in, with access from his/her acquaintance contacts and stranger contacts in the residential region.
-- Quarantine: The person is quarantined at home with other individuals sharing the same residential POI. 
-- Isolation: The person is isolated, even from the individuals living in the same residential POI.
+- Quarantine: The person is quarantined at home, with access from acquaintance contacts sharing the same residential POI. 
+- Isolation: The person is isolated, without access from the acquaintance contacts living in the same residential POI.
 - Hospitalized: The person is under treatment in the hospital. A person can only be in the hospital after Stage 2.
 
-Their corresponding control API are:
+Their corresponding intervention APIs are:
 
 
 
@@ -115,7 +112,7 @@ To simulate one step, simply call ``eng.next_step()``
 Sample Codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found [here]https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py).
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py<https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`.
 
 .. code-block:: python
 
@@ -148,7 +145,7 @@ Here we provide a sample code for running our simulator, which can be found [her
 Results
 =======
 
-During simulation, the simulator will generate the submission file ``sub_xxx.txt`` and visualization files.
+During simulation, the simulator will generate the submission file ``sub_xxx.txt`` and log files.
 
 
 Submission

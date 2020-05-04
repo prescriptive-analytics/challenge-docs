@@ -1,8 +1,8 @@
 Simulator Modeling
 ******************
-The infection spread in this simulator is modeled according to what is known about the epidemic. The assumptions about the Epidemic spread and mobility implemented in the simulator are based on the published research as well as interactions with the epidemiologists. We plan to update the simulator as more and more about Epidemic will be known.
+The epidemic spreading in this simulator is modeled according to what is known about the COVID-19. The assumptions about the epidemic spreading and mobility implemented in the simulator are based on the published research as well as interactions with the epidemiologists. We plan to update the simulator as more and more about epidemic will be known.
 
-The simulator simulates individual mobility in a city of :math:`R` Regions with :math:`M` people. Each region consists of several POIs, where each POI can contains up to three types of POIs: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
+The simulator simulates individual mobility in a city of :math:`R` POIs with :math:`M` people. Each POI belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
 +------------------+---+------------------+--------+
 |     Parameter specification in this challenge    |
@@ -48,33 +48,34 @@ An individual’s health status follows the stages below:
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 | Health status               | Description                  | Infected | Contagious | Symptoms | Immune |
 +=============================+==============================+==========+============+==========+========+
-| Susceptible case            | liable to be infected        | -        | -          | -        | -      |
+| 1. Susceptible case            | liable to be infected        | -        | -          | -        | -      |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| Pre-symptomatic             | before the onset of symptoms | ✔        | ✔          | -        | -      |
+| 2. Pre-symptomatic             | before the onset of symptoms | ✔        | ✔          | -        | -      |
 | infected case               |                              |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| Symptomatic infected case   | showing signs and symptoms   | ✔        | ✔          | ✔        | -      |
+| 3. Symptomatic infected case   | showing signs and symptoms   | ✔        | ✔          | ✔        | -      |
 |                             | compatible with infection    |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| Symptomatic infected cases  | symptomatic with severe      | ✔        | ✔          | ✔        | -      |
+| 4. Symptomatic infected cases  | symptomatic with severe      | ✔        | ✔          | ✔        | -      |
 | with critical condition     | acute respiratory illness    |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| Recovered                   | recovered and resistant      | -        | -          | -        | ✔      |
+| 5. Recovered                   | recovered and resistant      | -        | -          | -        | ✔      |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 
 
-- Stage 1. **Susceptible**: Liable to be infected
 
-- Stage 2. **Pre-symptomatic** infected: Infected and undiscovered
+- Stage 1. ``Susceptible``: Liable to be infected
+
+- Stage 2.  ``Pre-symptomatic`` infected: Infected and undiscovered
     * From Stage 1 to Stage 2, people can get infected via contact with infected people, with different probabilities from their contacts.
 
-- Stage 3. **Symptomatic** infected:  Infected and showing signs and symptoms
+- Stage 3. ``Symptomatic`` infected:  Infected and showing signs and symptoms
     * From Stage 2 to Stage 3, there is a fixed incubation period of :math:`INC` days.
 
-- Stage 4. Symptomatic infected with **critical** health condition
+- Stage 4. Symptomatic infected with ``critical`` health condition
     * From Stage 3 to Stage 4, there is a development time period :math:`d \sim Normal(d_1, d_2)`.
 
-- Stage 5. **Recovered**: recovered and resistant
+- Stage 5. ``Recovered``: recovered and resistant
     * From Stage 4 to Stage 5, there is a fixed hospitalized time period of :math:`TREAT` days after he/she is sent to the hospital.
 
 +-------------+---+-------------+---+-------------+---+---------------+-----+
