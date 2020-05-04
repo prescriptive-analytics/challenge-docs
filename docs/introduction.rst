@@ -33,7 +33,7 @@ Based on these two basic metrics, we calculate the following score for this comp
 	 10^6 \quad & \text{else}
 	\end{matrix}\right.
 
-Our goal is to minize the score, evaluated on day 60.
+Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
 
 +-----------+-----+-----------+------+-----------+-----+-----------+-----------+------------+-----+
