@@ -35,13 +35,11 @@ Based on these two basic metrics, we calculate the following score for this comp
 
 Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
-
 +-----+-----+-----+------+-----+-----+-----+------+-----+-----+
 |        Parameter specification in this challenge            |
 +-----+-----+-----+------+-----+-----+-----+------+-----+-----+
 | λ_h |  1  | λ_i |  0.5 | λ_q | 0.3 | λ_c | 0.2  | θ_I | 1000| 
 +-----+-----+-----+------+-----+-----+-----+------+-----+-----+
-
 
 
 Support

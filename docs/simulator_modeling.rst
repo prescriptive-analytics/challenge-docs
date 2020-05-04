@@ -7,7 +7,7 @@ The simulator simulates individual mobility in a city of :math:`R` Regions with 
 +------------------+---+------------------+--------+
 |     Parameter specification in this challenge    |
 +------------------+---+------------------+--------+
-| R                | 11|           M      | 100000 |
+| R                | 11|           M      | 10000  |
 +------------------+---+------------------+--------+
 
 
