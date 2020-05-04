@@ -20,26 +20,25 @@ In this competition, we aim to look for effective human mobility intervention po
 We first define two basic metrics:
 
 - :math:`I`: the number of people who are infected with coronavirus.
-- :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \frac{\lambda_h Home + Isolated} {\lambda_h + 1}`.)
+- :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum'] + \lambda_q * quarantineNum + \lambda_c * confineNum_mean`.)
 
 Based on these two basic metrics, we calculate the following score for this competition.
 
 .. math::
 
-	\left\{\begin{matrix}
-	 Q \quad &\text{if } I< 100 \\ 
+	Score = \left\{\begin{matrix}
+	 Q \quad &\text{if } I< \theta_I \\ 
 	 10^6 \quad & \text{else}
 	\end{matrix}\right.
 
+Our goal is to minize the score, evaluated on day 60.
 
-The weighted sum of :math:`I` and :math:`Q`, :math:`\lambda` is a predefined factor.
 
-
-+------------------+---+------------------+--------+
-|     Parameter specification in this challenge    |
-+------------------+---+------------------+--------+
-| I                | 11|           Q      | 100000 |
-+------------------+---+------------------+--------+
++-----------+-----+-----------+------+-----------+-----+-----------+-----------+------------+-----+
+|                         Parameter specification in this challenge                               |
++-----------+-----+-----------+------+-----------+-----+-----------+-----------+------------+-----+
+| \lambda_h |  1  | \lambda_i |  0.5 | \lambda_q | 0.3 | \lambda_c |     0.2   |  \theta_I  | 1000| 
++-----------+-----+-----------+------+-----------+-----+-----------+-----------+------------+-----+
 
 
 Support
