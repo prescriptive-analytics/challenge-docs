@@ -20,7 +20,9 @@ In this competition, we aim to look for effective human mobility intervention po
 We first define two basic metrics:
 
 - :math:`I`: the number of people who are infected with coronavirus.
-- :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`.)
+- :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized. We have a weighted sum as:
+
+    - :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`
 
 Based on these two basic metrics, we calculate the following score for this competition.
 
