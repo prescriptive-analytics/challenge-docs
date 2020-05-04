@@ -4,11 +4,11 @@ The infection spread in this simulator is modeled according to what is known abo
 
 The simulator simulates individual mobility in a city of :math:`R` Regions with :math:`M` people. Each region consists of several POIs, where each POI can contains up to three types of POIs: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
-+------------------+---+------------------+---+-------------------+-----+-------------------+-----+
-|                             Parameter specification in this challenge                           |
-+------------------+---+------------------+---+-------------------+-----+-------------------+-----+
-| R                | 11|           M      | 100000 |              |     |                   |     |
-+------------------+---+------------------+---+-------------------+-----+-------------------+-----+
++------------------+---+------------------+--------+
+|     Parameter specification in this challenge    |
++------------------+---+------------------+--------+
+| R                | 11|           M      | 100000 |
++------------------+---+------------------+--------+
 
 
 Human Mobility Model
@@ -71,7 +71,7 @@ An individual’s health status follows the stages below:
 - Stage 3. **Symptomatic** infected:  Infected and showing signs and symptoms
     * From Stage 2 to Stage 3, there is a fixed incubation period of :math:`INC` days.
 
-- Stage 4. Symptomatic infected with **critical** condition
+- Stage 4. Symptomatic infected with **critical** health condition
     * From Stage 3 to Stage 4, there is a development time period :math:`d \sim Normal(d_1, d_2)`.
 
 - Stage 5. **Recovered**: recovered and resistant
@@ -94,8 +94,13 @@ Mobility Intervention Actions
 We can provide different actions to each individual:
 
 
-- Free: The person can move normally.
-- Confined: An individual is confined in the neighborhood that he/she lives in, with access from his/her acquaintance contacts and stranger contacts in the residential region.
-- Quarantine: The person is quarantined at home with other individuals sharing the same residential POI. 
-- Isolation: The person is isolated, even from the individuals living in the same residential POI.
-- Hospitalized: The person is under treatment in the hospital. A person can only be in the hospital after Stage 2.
+We provide 5 levels of mobility intervention:
+
+- Level 0 - No intervene: The individual can move normally
+- Level 1 - Confine: The individual is confined within community, with access from individuals sharing the same community
+- Level 2 - Quarantine: The person is quarantined at home, with access from individuals sharing the same home.
+- Level 3 - Isolate: The person is isolated, even without access from the individuals living in the same home
+- Level 4 - Hospitalize: The person is in hospital.
+
+.. note::
+    When an individual is intended with multiple interventions , only the highest level of intervention will be applied.

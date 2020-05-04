@@ -15,13 +15,6 @@ The challenge will be evaluated on a human mobility and epidemic transmission si
 Goal & Metrics
 --------------
 
-.. role:: raw-latex(raw)
-    :format: latex html
-
-.. raw:: html
-
-   <script type="text/javascript" src="http://localhost/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 In this competition, we aim to look for effective human mobility intervention policies in a Epidemic. Generally, our goal is to minimize the total number of infected people and, at the same time, minimize the intervention on human mobility.
 
 We first define two basic metrics:
@@ -30,14 +23,13 @@ We first define two basic metrics:
 - :math:`Q`: the total number of days that an individual has been under mobility interventions, including confined at community, quarantined at home, isolated, and hospitalized.  (We could have a weighted sum of home and isolated :math:`Q = \frac{\lambda_h Home + Isolated} {\lambda_h + 1}`.)
 
 Based on these two basic metrics, we calculate the following score for this competition.
-- :raw:: latex html
 
-    L =\left\{
-    \begin{aligned}
-    & Q \quad \text{if} I< 100 \\
-    & 10^6 \quad \text{else} \\
-    \end{aligned}
-    \right.`
+.. math::
+
+	\left\{\begin{matrix}
+	 Q \quad &\text{if } I< 100 \\ 
+	 10^6 \quad & \text{else}
+	\end{matrix}\right.
 
 
 The weighted sum of :math:`I` and :math:`Q`, :math:`\lambda` is a predefined factor.
