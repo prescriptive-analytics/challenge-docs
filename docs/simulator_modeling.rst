@@ -118,9 +118,9 @@ Evaluation Metrics
 We first define two basic metrics:
 
 - :math:`I`: the total number of infected people from day 1 to day :math:`T`.
-- :math:`Q`: a weighted sum of the number of people confined at community, quarantined at home, isolated, and hospitalized from day 1 to day :math:`T`. We have a weighted sum as:
+- :math:`Q`: the weighted sum on the accumulated days of people being confined at community, quarantined at home, isolated, and hospitalized from day 1 to day :math:`T`. We have a weighted sum as:
 
-    - :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`
+    - :math:`Q = \lambda_h * N_{hospitalized} + \lambda_i * N_{isolated} + \lambda_q * N_{quarantined} + \lambda_c * N_{confined}`
 
 Based on these two basic metrics, we calculate the following score for this competition.
 
