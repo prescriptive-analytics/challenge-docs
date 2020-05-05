@@ -1,26 +1,26 @@
 Try it yourself
 *********
 
-We provide a `Starter-Kit<https://github.com/prescriptive-analytics/starter-kit>` as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+We provide a `Starter-Kit<https://github.com/prescriptive-analytics/starter-kit>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
 
 
 Installation Guide
 ==================
 
-1. Check that you have python 3 installed. Other version of python might work, however, we only tested on python with version >= 3.5.
+1. Check that you have python 3 installed. Other version of python might work, however, we only tested on python with version >= 3.6.
 
 
 2. Preparation
 
-* 2.1 Install boost library.
+2.1 Install boost library.
 
 Mac OS: `brew install boost`
 
 Linux: `sudo apt-get install libboost-dev`
 
-Windows: Please refer to `install-boost-build<https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build>`
+Windows: Please refer to `install-boost-build<https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build>`_
 
-* 2.2 Specify system and python environment 
+2.2 Specify system and python environment 
 
 Make sure you have compatible python environment that marches with the simulator. Currently, we support the following versions of python:
 
@@ -45,50 +45,6 @@ Linux: python 3.6.8
     eng = simulator.Engine
 
 
-
-Mobility Intervention
-=====================
-
-
-Flexible strategy 
------------------
-
-We provide flexible internvention strategies on individuals. You can intervene the mobility of an individual by setting his/her mobility with the following actions:
-
-- No intervention: The individual can move normally.
-- Confined: An individual is confined in the neighborhood that he/she lives in, with access from his/her acquaintance contacts and stranger contacts in the residential region.
-- Quarantine: The person is quarantined at home, with access from acquaintance contacts sharing the same residential POI. 
-- Isolation: The person is isolated, without access from the acquaintance contacts living in the same residential POI.
-- Hospitalized: The person is under treatment in the hospital. A person can only be in the hospital after Stage 2.
-
-Their corresponding intervention APIs are:
-
-
-
-``set_man_isolate_days(days_to_isolate)``: 
-
-- Args: days_to_isolate 
-- a dictionary with manID as key and days for each person to be isolated as value.
-
-``set_man_quarantine_days(days_to_quarantine)``:
-
-- Args: days_to_quarantine 
-- a dictionary with manID as key and days for each person to be quarantined as value.
-
-``set_man_confine_days(days_to_confine)``:
-
-- Args: days_to_confine - a dictionary with manID as key and days for each person to be confined as value.
-
-``set_man_to_treat(if_treat)``
-
-- Args: if_treat 
-- a dictionary with manID as key and whether he/she is sent to be treated as value.
-
-
-
-
-
-
 Run Simulation
 ==============
 
@@ -100,7 +56,7 @@ Initiate engine
 .. code-block:: python
     
     import simulator
-    eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="exmample")
+    eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="test")
 
 - ``thread_num``: number of threads.
 - ``specified_run_name``: results saving folder name.
@@ -120,10 +76,10 @@ To simulate one step, simply call ``eng.next_step()``
 
 
 
-Sample Codes
+Sample codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py<https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`.
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py<https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_.
 
 .. code-block:: python
 
@@ -133,7 +89,7 @@ Here we provide a sample code for running our simulator, which can be found in t
 
     period = 840
 
-    engine = simulator.Engine()
+    engine = simulator.Engine(specified_run_name="test")
 
     engine.reset()
     for i in range(period):
@@ -156,7 +112,7 @@ Here we provide a sample code for running our simulator, which can be found in t
 Results
 =======
 
-During simulation, the simulator will generate the submission file ``sub_xxx.txt`` and log files.
+During simulation, the simulator will generate the submission file ``sub_xxx.txt`` and log files.  ``xxx`` corresponds with your ``specified_run_name`` when initiating the engine ``simulator.Engine(specified_run_name="xxx")``.
 
 
 Submission
@@ -172,7 +128,7 @@ Before submission, make sure:
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found [here](https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py).
+Here we provide a sample code of simulation that matches with submission requirements, which can be found `here<https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py>`.
 
 
 

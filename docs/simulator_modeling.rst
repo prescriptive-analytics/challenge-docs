@@ -4,8 +4,6 @@ Simulator
 Simulator Modeling
 ==================
 
-The epidemic spreading in this simulator is modeled according to what is known about the COVID-19. The assumptions about the epidemic spreading and mobility implemented in the simulator are based on the published research as well as interactions with the epidemiologists. We plan to update the simulator as more and more about epidemic will be known.
-
 The simulator simulates individual mobility in a city of :math:`R` POIs with :math:`M` people. Each POI belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
 +------------------+---+------------------+--------+
@@ -17,11 +15,11 @@ The simulator simulates individual mobility in a city of :math:`R` POIs with :ma
 
 Human Mobility Model
 ++++++++++++++++++++
-A person has different modes of mobility during workdays and weekends.
+Our simulator simulates the human mobility from 8 A.M. to 22 P.M. with one simulation step corresponding with one hour in the real world. An individual has different modes of mobility during weekdays and weekends. 
 
-On working days, a person will start from home to working POI at a certain time :math:`T^d_{start} \sim \mathcal{U}(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim \mathcal{U}(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim \mathcal{U} (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
+On weekdays, an individual will start from residential POI to working POI at a certain time :math:`T^d_{start} \sim \mathcal{U}(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim \mathcal{U}(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim \mathcal{U} (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
 
-On weekends, people may visit a random commercial POI within the whole city at a certain time :math:`T^e_{start} \sim \mathcal{U}(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim \mathcal{U} (t^e_{c1}, t^e_{c2})` hours. After that, they will return residential POI.
+On weekends, people may visit a random commercial POI at a certain time :math:`T^e_{start} \sim \mathcal{U}(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim \mathcal{U} (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential POI.
 
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 | :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 2 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
@@ -30,14 +28,16 @@ On weekends, people may visit a random commercial POI within the whole city at a
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 | :math:`t^e_{c1}` | 1 | :math:`t^e_{c2}` | 2 | :math:`P^d_{com}` | 0.1 | :math:`P^e_{com}` | 0.3 |
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
+| :math:`K`        | 1 |                  |   |                   |     |                   |     |
++------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 
 Disease Transmission Model
 ++++++++++++++++++++++++++
-The disease can transmit from an infected person through two kinds of contacts:
+The disease can transmit from an infected individual through two kinds of contacts:
 
 - Acquaintance contacts: An individual has a fixed group of acquaintance contacts with size :math:`K_l \sim \mathcal{U}(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim \mathcal{U}(w_{c1}, w_{c2})` in his/her working POI. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
 
-- Stranger contacts: An individual could be in contact with strangers visiting the same type of POI in the same region at the same time. At each timestamp, there is probability :math:`P_s` for a person to get infected from an infected stranger contact. 
+- Stranger contacts: An individual could be in contact with strangers visiting the same POI at the same time. At each timestamp, there is probability :math:`P_s` for an individual to get infected from an infected stranger contact. 
 
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
@@ -45,7 +45,7 @@ The disease can transmit from an infected person through two kinds of contacts:
 | :math:`P_c`     | 0.00033 |                 |   | :math:`P_s`     | 0.00005|     --------    |    |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 
-Health status of a person
+Health Status of an Individual
 +++++++++++++++++++++++++
 An individual’s health status follows the stages below:
 
@@ -77,13 +77,13 @@ An individual’s health status follows the stages below:
     * From Stage 2 to Stage 3, there is a fixed incubation period of :math:`INC` days.
 
 - Stage 4. Symptomatic infected with ``critical`` health condition
-    * From Stage 3 to Stage 4, there is a development time period :math:`d \sim \mathcal{N}(d_1, d_2)`.
+    * From Stage 3 to Stage 4, there is a development time period :math:`d \sim \mathcal{N}(\mu, \phi)`.
 
 - Stage 5. ``Recovered``: recovered and resistant
-    * From Stage 4 to Stage 5, there is a fixed hospitalized time period of :math:`TREAT` days after he/she is sent to the hospital.
+    * From Stage 4 to Stage 5, he/she will recover after being hospitalized consecutively for :math:`TREAT` days, and become immune to the disease.
 
 +-------------+---+-------------+---+-------------+---+---------------+-----+
-| :math:`INC` | 3 | :math:`d_1` | 2 | :math:`d_2` | 3 | :math:`TREAT` | inf |
+| :math:`INC` | 3 | :math:`\mu` | 2 |:math:`\phi` | 3 | :math:`TREAT` | 15  |
 +-------------+---+-------------+---+-------------+---+---------------+-----+
 
 
@@ -100,11 +100,11 @@ Mobility Intervention Actions
 We can provide 5 levels of mobility intervention to each individual:
 
 
-- Level 0 - No intervene: The individual can move normally
-- Level 1 - Confine: An individual is confined in the neighborhood that he/she lives in, with access from his/her acquaintance contacts and stranger contacts in the residential region.
-- Level 2 - Quarantine: The person is quarantined at home, with access from acquaintance contacts sharing the same residential POI. 
-- Level 3 - Isolate: The person is isolated, without access from the acquaintance contacts living in the same residential POI.
-- Level 4 - Hospitalize: The person is under treatment in the hospital. 
+- Level 0 - No intervene: The individual can move normaly.
+- Level 1 - Confine: An individual is confined in the neighborhood that he/she lives in, in contact with his/her acquaintance contacts and stranger contacts in the residential POI.
+- Level 2 - Quarantine: The individual is quarantined at home, in contact with acquaintance contacts sharing the same residential POI. 
+- Level 3 - Isolate: The individual is isolated, even from the acquaintance contacts living in the same residential POI.
+- Level 4 - Hospitalize: The individual is under treatment in the hospital. 
 
 .. note::
     When an individual is intended with multiple interventions , only the highest level of intervention will be applied.
@@ -118,9 +118,10 @@ Evaluation Metrics
 We first define two basic metrics:
 
 - :math:`I`: the total number of infected people from day 1 to day :math:`T`.
-- :math:`Q`: the weighted sum on the accumulated days of people being confined at community, quarantined at home, isolated, and hospitalized from day 1 to day :math:`T`. We have a weighted sum as:
+- :math:`Q`: the weighted sum of :math:`N_v`, where if an individual is under intervention :math:`v` for one day (:math:`v\in\{hospitalized, isolated, quarantined, confined\}`), it will put towards adding 1 towards :math:`N_v`:
 
     - :math:`Q = \lambda_h * N_{hospitalized} + \lambda_i * N_{isolated} + \lambda_q * N_{quarantined} + \lambda_c * N_{confined}`
+
 
 Based on these two basic metrics, we calculate the following score for this competition.
 
@@ -132,4 +133,6 @@ Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
 +-------+------+-----+--------+-----+--------+-----+--------+
 | θ_I   | 1000 | θ_Q | 100000 | Q_w |  1.0   |  T  |   60   |
++-------+------+-----+--------+-----+--------+-----+--------+
+| λ_h   | 1.0  | λ_i |  0.5   | λ_q |  0.3   | λ_c |  0.2   |
 +-------+------+-----+--------+-----+--------+-----+--------+
