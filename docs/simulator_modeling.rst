@@ -117,8 +117,8 @@ Evaluation Metrics
 
 We first define two basic metrics:
 
-- :math:`I`: the number of people who are infected.
-- :math:`Q`: the total number of intervetions, including confined at community, quarantined at home, isolated, and hospitalized. We have a weighted sum as:
+- :math:`I`: the total number of infected people from day 1 to day :math:`T`.
+- :math:`Q`: a weighted sum of the number of people confined at community, quarantined at home, isolated, and hospitalized from day 1 to day :math:`T`. We have a weighted sum as:
 
     - :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`
 
@@ -126,10 +126,10 @@ Based on these two basic metrics, we calculate the following score for this comp
 
 .. math::
 
-	Score = e^{\frac{I}{\theta_I}}+Q_w*e^{\frac{Q}{\theta_Q}}.
+	Score = exp\{\frac{I}{\theta_I}\}+Q_w*exp\{\frac{Q}{\theta_Q}\}.
 
 Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
-+-------+------+-----+--------+-----+--------+
-| θ_I   | 1000 | θ_Q | 100000 | Q_w |  1.0   |
-+-------+------+-----+--------+-----+--------+
++-------+------+-----+--------+-----+--------+-----+--------+
+| θ_I   | 1000 | θ_Q | 100000 | Q_w |  1.0   |  T  |   60   |
++-------+------+-----+--------+-----+--------+-----+--------+
