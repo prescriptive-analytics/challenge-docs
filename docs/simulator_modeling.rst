@@ -118,7 +118,7 @@ Evaluation Metrics
 We first define two basic metrics:
 
 - :math:`I`: the total number of infected people from day 1 to day :math:`T`.
-- :math:`Q`: the weighted sum of :math:`N_v`, where if an individual is under intervention :math:`v` for one day (:math:`v\in\{hospitalized, isolated, quarantined, confined\}`), it will put towards adding 1 towards :math:`N_v`:
+- :math:`Q`: the weighted sum of :math:`N_v`, where if an individual is under intervention :math:`v` for one day, it will put towards adding 1 towards :math:`N_v` (:math:`v\in\{hospitalized, isolated, quarantined, confined\}`):
 
     - :math:`Q = \lambda_h * N_{hospitalized} + \lambda_i * N_{isolated} + \lambda_q * N_{quarantined} + \lambda_c * N_{confined}`
 
@@ -131,8 +131,8 @@ Based on these two basic metrics, we calculate the following score for this comp
 
 Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
++---------------+------+-----+--------+-----+--------+-----+--------+
+| :math:`\theta_I`   | 1000 | θ_Q | 100000 | Q_w |  1.0   |  T  |   60   |
 +-------+------+-----+--------+-----+--------+-----+--------+
-| θ_I   | 1000 | θ_Q | 100000 | Q_w |  1.0   |  T  |   60   |
-+-------+------+-----+--------+-----+--------+-----+--------+
-| λ_h   | 1.0  | λ_i |  0.5   | λ_q |  0.3   | λ_c |  0.2   |
+| :math:`\lambda_h`  | 1.0  | λ_i |  0.5   | λ_q |  0.3   | λ_c |  0.2   |
 +-------+------+-----+--------+-----+--------+-----+--------+
