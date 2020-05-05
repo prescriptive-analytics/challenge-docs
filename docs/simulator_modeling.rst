@@ -1,5 +1,9 @@
+Simulator
+#########
+
 Simulator Modeling
-******************
+==================
+
 The epidemic spreading in this simulator is modeled according to what is known about the COVID-19. The assumptions about the epidemic spreading and mobility implemented in the simulator are based on the published research as well as interactions with the epidemiologists. We plan to update the simulator as more and more about epidemic will be known.
 
 The simulator simulates individual mobility in a city of :math:`R` POIs with :math:`M` people. Each POI belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
@@ -90,18 +94,42 @@ An individual’s health status follows the stages below:
 	1. Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
 	2. World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
 
+
 Mobility Intervention Actions
-++++++++++++++++++++++++++++++
-We can provide different actions to each individual:
+=============================
+We can provide 5 levels of mobility intervention to each individual:
 
-
-We provide 5 levels of mobility intervention:
 
 - Level 0 - No intervene: The individual can move normally
-- Level 1 - Confine: The individual is confined within community, with access from individuals sharing the same community
-- Level 2 - Quarantine: The person is quarantined at home, with access from individuals sharing the same home.
-- Level 3 - Isolate: The person is isolated, even without access from the individuals living in the same home
-- Level 4 - Hospitalize: The person is in hospital.
+- Level 1 - Confine: An individual is confined in the neighborhood that he/she lives in, with access from his/her acquaintance contacts and stranger contacts in the residential region.
+- Level 2 - Quarantine: The person is quarantined at home, with access from acquaintance contacts sharing the same residential POI. 
+- Level 3 - Isolate: The person is isolated, without access from the acquaintance contacts living in the same residential POI.
+- Level 4 - Hospitalize: The person is under treatment in the hospital. 
 
 .. note::
     When an individual is intended with multiple interventions , only the highest level of intervention will be applied.
+
+
+
+
+Evaluation Metrics
+==================
+
+We first define two basic metrics:
+
+- :math:`I`: the number of people who are infected.
+- :math:`Q`: the total number of intervetions, including confined at community, quarantined at home, isolated, and hospitalized. We have a weighted sum as:
+
+    - :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`
+
+Based on these two basic metrics, we calculate the following score for this competition.
+
+.. math::
+
+	Score = e^{\frac{I}{\theta_I}}+Q_w*e^{\frac{Q}{\theta_Q}}.
+
+Our goal is to minimize the score, evaluated on the 60th day of simulation.
+
++-------+------+-----+--------+-----+--------+
+| θ_I   | 1000 | θ_Q | 100000 | Q_w |  1.0   |
++-------+------+-----+--------+-----+--------+

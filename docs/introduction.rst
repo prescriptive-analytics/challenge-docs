@@ -4,9 +4,9 @@ Mobility Intervention of Epidemics Challenge
 
 `Home Page <http://116.62.170.46:8980/>`_.
 
-In response to the current world-wide concern of COVID-19, we host this challenge on finding the best intervention policy to fight against the pandemic. The challenge would like to gather the global research community to apply recent advances in data science and AI to generate new insights in support of the ongoing fight against this infectious disease. 
+The challenge would like to gather the global research community to apply recent advances in data science and AI to generate new insights in support of the fight against pandemics like COVID-19. 
 
-The challenge will be evaluated on a human mobility and epidemic transmission simulator, which are based on real data. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
+The challenge will be evaluated on a human mobility and epidemic transmission simulator. Participants will design different strategies to minimize the spread of the virus. The winners will be invited to present at the workshop.
 
 
 
@@ -16,34 +16,10 @@ The challenge will be evaluated on a human mobility and epidemic transmission si
     :align: center
     
 
-Goal & Metrics
+Goal
 --------------
 
 In this challenge, we aim to look for effective human mobility intervention policies during an epidemic outbreak. Generally, our goal is to minimize the total number of infected people and, at the same time, minimize the intervention on human mobility.
-
-We first define two basic metrics:
-
-- :math:`I`: the number of people who are infected.
-- :math:`Q`: the total number of intervetions, including confined at community, quarantined at home, isolated, and hospitalized. We have a weighted sum as:
-
-    - :math:`Q = \lambda_h * inHospitalNum + \lambda_i * isolateNum + \lambda_q * quarantineNum + \lambda_c * confineNum`
-
-Based on these two basic metrics, we calculate the following score for this competition.
-
-.. math::
-
-	Score = \left\{\begin{matrix}
-	 Q \quad &\text{if } I< \theta_I \\ 
-	 10^6 \quad & \text{else}
-	\end{matrix}\right.
-
-Our goal is to minimize the score, evaluated on the 60th day of simulation.
-
-+-----+-----+-----+------+-----+-----+-----+------+-----+-----+
-|        Parameter specification in this challenge            |
-+-----+-----+-----+------+-----+-----+-----+------+-----+-----+
-| λ_h |  1  | λ_i |  0.5 | λ_q | 0.3 | λ_c | 0.2  | θ_I | 1000| 
-+-----+-----+-----+------+-----+-----+-----+------+-----+-----+
 
 
 Support
