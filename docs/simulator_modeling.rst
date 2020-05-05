@@ -17,9 +17,9 @@ Human Mobility Model
 ++++++++++++++++++++
 Our simulator simulates the human mobility from 8 A.M. to 22 P.M. with one simulation step corresponding with one hour in the real world. An individual has different modes of mobility during weekdays and weekends. 
 
-On weekdays, an individual will start from residential POI to working POI at a certain time :math:`T^d_{start} \sim \mathcal{U}(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim \mathcal{U}(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim \mathcal{U} (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
+On weekdays, an individual will start from residential POI to working POI at a certain time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim U(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim U (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
 
-On weekends, people may visit a random commercial POI at a certain time :math:`T^e_{start} \sim \mathcal{U}(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim \mathcal{U} (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential POI.
+On weekends, people may visit a random commercial POI at a certain time :math:`T^e_{start} \sim U(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim U (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential POI.
 
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 | :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 2 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
@@ -35,7 +35,7 @@ Disease Transmission Model
 ++++++++++++++++++++++++++
 The disease can transmit from an infected individual through two kinds of contacts:
 
-- Acquaintance contacts: An individual has a fixed group of acquaintance contacts with size :math:`K_l \sim \mathcal{U}(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim \mathcal{U}(w_{c1}, w_{c2})` in his/her working POI. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
+- Acquaintance contacts: An individual has a fixed group of acquaintance contacts with size :math:`K_l \sim U(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim U(w_{c1}, w_{c2})` in his/her working POI. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
 
 - Stranger contacts: An individual could be in contact with strangers visiting the same POI at the same time. At each timestamp, there is probability :math:`P_s` for an individual to get infected from an infected stranger contact. 
 
