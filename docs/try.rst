@@ -1,7 +1,7 @@
 Try it yourself
 *********
 
-We provide a `Starter-Kit<https://github.com/prescriptive-analytics/starter-kit>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
 
 
 Installation Guide
@@ -22,7 +22,7 @@ Installation Guide
         - Locate libboost_system.so with `locate libboost_system.so`
         - Add the last step paths to your system path with `export PATH={your paths}:$PATH`
 
-    - Windows: Please refer to `install-boost-build<https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build>`_
+    - Windows: Please refer to `install-boost-build <https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html#install-boost-build>`_
 
 
     2.2 Specify python environment 
@@ -83,7 +83,7 @@ To simulate one step, simply call ``eng.next_step()``
 Sample codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py<https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_.
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_.
 
 .. code-block:: python
 
@@ -132,7 +132,7 @@ Before submission, make sure:
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found `here<https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py>`.
+Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py>`.
 
 
 
