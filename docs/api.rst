@@ -39,20 +39,21 @@ Data Access API
 ``get_region_visited_history(PoiID)``:
 
 - Args: PoiID - id for the POI
-- Return: a 2D list of the visited history of one POI. Each of the inner 1D list represents the history for one hour. [[manID1, manID2, manID3, ...], [manID7, manID8,]]
+- Return: a 2D list of the visited history of one POI in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
+[[manID1, manID2, manID3, ...], [manID7, manID8,]]
 
 
 ``get_man_visited_history(manID)``:
 
 - Args: manID
-- Return: a 1D list of the id of the POIs that he/she has visited. 
-[poiID1, poiID2, ...]
+- Return: a 1D list of the id of the POIs that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list.
+[poiID1, poiID2, ...].
 
 
 ``get_man_visited_history_with_p_infection(manID)``:
 
 - Args: manID
-- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the POIs that he/she has visited. 
+- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the POIs that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_man_visited_history``.
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
