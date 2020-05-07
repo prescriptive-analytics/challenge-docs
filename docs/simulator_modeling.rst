@@ -15,7 +15,7 @@ The simulator simulates individual mobility in a city of :math:`R` POIs with :ma
 
 Human Mobility Model
 ++++++++++++++++++++
-Our simulator simulates the human mobility from 8 A.M. to 22 P.M. with one simulation step corresponding with one hour in the real world. An individual has different modes of mobility during weekdays and weekends. 
+Our simulator simulates the human mobility from 8 A.M. to 10 P.M. with one simulation step corresponding with one hour in the real world. An individual has different modes of mobility during weekdays and weekends. 
 
 On weekdays, an individual will start from residential POI to working POI at a certain time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim U(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim U (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
 
