@@ -83,7 +83,7 @@ To simulate one step, simply call ``eng.next_step()``
 Sample codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_.
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_. 
 
 .. code-block:: python
 
@@ -132,7 +132,7 @@ Before submission, make sure:
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/submission.py>`.
+Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/submit.py>`_.
 
 
 
