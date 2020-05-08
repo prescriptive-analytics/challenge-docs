@@ -1,6 +1,20 @@
 APIs
 ****
 
+Simulation Initialization API
+=====================
+
+``Engine(thread_num=1, write_mode="append", specified_run_name="test")``:
+- Args: 
+
+	- ``thread_num``: number of threads.
+	- ``specified_run_name``: results saving folder name.
+	- ``write_mode``: mode of saving simulation results, ``write`` will overwrite results from different rounds of simulation in the same ``specified_run_name`` folder, ``append`` will append the results from current simulation round to existing result files.
+
+- Return: an initialized engine without ``reset()``, should call ``reset()`` after this function.
+
+
+
 Simulation Config API
 =====================
 
@@ -22,6 +36,7 @@ Simulation Config API
 Data Access API
 ===============
 
+
 ``get_man_infection_state(manID)``:
 
 - Args: manID - id for man
@@ -33,7 +48,8 @@ Data Access API
 - Args: manID - id for man
 - Return: instervention status of this man, ``0: no such man id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
 
-
+.. note::
+	All the IDs for men and areas start from 0.
 
 
 ``get_region_visited_history(areaID)``:

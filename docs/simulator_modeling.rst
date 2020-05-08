@@ -4,7 +4,7 @@ Simulator
 Simulator Modeling
 ==================
 
-The simulator simulates individual mobility in a city of :math:`R` POIs with :math:`M` people. Each POI belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
+The simulator simulates individual mobility in a city of :math:`R` areas with :math:`M` people. Each area belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
 +------------------+---+------------------+--------+
 |     Parameter specification in this challenge    |
@@ -17,9 +17,9 @@ Human Mobility Model
 ++++++++++++++++++++
 Our simulator simulates the human mobility from 8 A.M. to 10 P.M. with one simulation step corresponding with one hour in the real world. An individual has different modes of mobility during weekdays and weekends. 
 
-On weekdays, an individual will start from residential POI to working POI at a certain time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim U(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial POI (randomly sampled from :math:`K_{com}` nearest POIs of the working POI)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim U (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential POI.
+On weekdays, an individual will start from residential area to working area at a certain time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})`, and stay there for :math:`T_{work} \sim U(t_{w1}, t_{w2})` hours. After work, they may visit a nearby commercial area (randomly sampled from :math:`K_{com}` nearest areas of the working area)  with a probability of :math:`P^d_{com}` and stay there for :math:`T^d_{com} \sim U (t^d_{c1}, t^d_{c2})` hours. Then, they will return to residential area.
 
-On weekends, people may visit a random commercial POI at a certain time :math:`T^e_{start} \sim U(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim U (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential POI.
+On weekends, people may visit a random commercial area at a certain time :math:`T^e_{start} \sim U(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim U (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential area.
 
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 | :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 2 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
@@ -35,15 +35,20 @@ Disease Transmission Model
 ++++++++++++++++++++++++++
 The disease can transmit from an infected individual through two kinds of contacts:
 
-- Acquaintance contacts: An individual has a fixed small group of acquaintance contacts with size :math:`K_l \sim U(l_{c1}, l_{c2})` in his/her residential POI, and a fixed group of acquaintance contacts with size :math:`K_w \sim U(w_{c1}, w_{c2})` in his/her working POI. Note that not all the individuals in the same residential/worling POI are the acquaintance contactsof the individual. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
+- Acquaintance contacts: An individual has a fixed small group of acquaintance contacts with size :math:`K_l \sim U(l_{c1}, l_{c2})` in his/her residential area, and a fixed group of acquaintance contacts with size :math:`K_w \sim U(w_{c1}, w_{c2})` in his/her working area. Note that not all the individuals in the same residential/worling area are the acquaintance contactsof the individual. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
 
-- Stranger contacts: An individual could be in contact with strangers visiting the same POI at the same time. At each timestamp, there is probability :math:`P_s` for an individual to get infected from an infected stranger contact. 
+- Stranger contacts: An individual could be in contact with strangers visiting the same area at the same time. At each timestamp, there is probability :math:`P_s` for an individual to get infected from an infected stranger contact. 
 
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`P_c`     | 0.00033 |                 |   | :math:`P_s`     | 0.00005|     --------    |    |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
+
+.. note::
+    The parameters are calibrated to in align with the :math:`R_0` of COVID-19 (2 ~ 2.5) provided by Wold Health Organization:
+
+    - World Health Organization. (2020, May 8). Situation reports. Retrieved May 8, 2020, from https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf
 
 Health Status of an Individual
 +++++++++++++++++++++++++
@@ -52,18 +57,18 @@ An individual’s health status follows the stages below:
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 | Health status               | Description                  | Infected | Contagious | Symptoms | Immune |
 +=============================+==============================+==========+============+==========+========+
-| 1. Susceptible case            | liable to be infected        | -        | -          | -        | -      |
+| 1. Susceptible case         | liable to be infected        | -        | -          | -        | -      |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| 2. Pre-symptomatic             | before the onset of symptoms | ✔        | ✔          | -        | -      |
+| 2. Pre-symptomatic          | before the onset of symptoms | ✔        | ✔          | -        | -      |
 | infected case               |                              |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| 3. Symptomatic infected case   | showing signs and symptoms   | ✔        | ✔          | ✔        | -      |
+| 3. Symptomatic infected case| showing signs and symptoms   | ✔        | ✔          | ✔        | -      |
 |                             | compatible with infection    |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| 4. Symptomatic infected cases  | symptomatic with severe      | ✔        | ✔          | ✔        | -      |
+| 4. Symptomatic infected case| symptomatic with severe      | ✔        | ✔          | ✔        | -      |
 | with critical condition     | acute respiratory illness    |          |            |          |        |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
-| 5. Recovered                   | recovered and resistant      | -        | -          | -        | ✔      |
+| 5. Recovered                | recovered and resistant      | -        | -          | -        | ✔      |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 
 
@@ -101,9 +106,9 @@ We can provide 5 levels of mobility intervention to each individual:
 
 
 - Level 0 - No intervene: The individual can move normaly.
-- Level 1 - Confine: An individual is confined in the neighborhood that he/she lives in, in contact with his/her acquaintance contacts and stranger contacts in the residential POI.
-- Level 2 - Quarantine: The individual is quarantined at home, in contact with acquaintance contacts sharing the same residential POI. 
-- Level 3 - Isolate: The individual is isolated, even from the acquaintance contacts living in the same residential POI.
+- Level 1 - Confine: An individual is confined in the neighborhood that he/she lives in, in contact with his/her acquaintance contacts and stranger contacts in the residential area.
+- Level 2 - Quarantine: The individual is quarantined at home, in contact with acquaintance contacts sharing the same residential area. 
+- Level 3 - Isolate: The individual is isolated, even from the acquaintance contacts living in the same residential area.
 - Level 4 - Hospitalize: The individual is under treatment in the hospital. 
 
 .. note::
