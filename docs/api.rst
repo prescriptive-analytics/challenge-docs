@@ -6,7 +6,7 @@ Simulation Config API
 
 ``reset(seed=False)``: 
 
-- Reset the simulation
+- Reset the simulation, this should be called after we creat an engine with ``Engine()``
 - Reset random seed if ``seed`` is set to ``True``
 
 
@@ -36,35 +36,35 @@ Data Access API
 
 
 
-``get_region_visited_history(PoiID)``:
+``get_region_visited_history(areaID)``:
 
-- Args: PoiID - id for the POI
-- Return: a 2D list of the visited history of one POI in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
+- Args: areaID - id for the area
+- Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
 [[manID1, manID2, manID3, ...], [manID7, manID8,]]
 
 
 ``get_man_visited_history(manID)``:
 
 - Args: manID
-- Return: a 1D list of the id of the POIs that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list.
-[poiID1, poiID2, ...].
+- Return: a 1D list of the id of the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list.
+[areaID1, areaID2, ...].
 
 
 ``get_man_visited_history_with_p_infection(manID)``:
 
 - Args: manID
-- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the POIs that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_man_visited_history``.
+- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_man_visited_history``.
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
 ``get_region_contained_man()``:
 
-- Return: a dictionary with POI id as the key, and the list of manID who live in this POI as the value 
+- Return: a dictionary with area id as the key, and the list of manID who live in this area as the value 
 
-``get_region_infected_cnt(poiID)``:
+``get_region_infected_cnt(areaID)``:
 
-- Args: poiID
-- Return: an int representing the number of infected people in this POI
+- Args: areaID
+- Return: an int representing the number of infected people in this area
 
 
 ``get_life_count()``:

@@ -61,6 +61,7 @@ Initiate engine
     
     import simulator
     eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="test")
+    eng.reset()
 
 - ``thread_num``: number of threads.
 - ``specified_run_name``: results saving folder name.
@@ -71,7 +72,7 @@ Simulate one step
 -----------------
 
 
-To simulate one step, simply call ``eng.next_step()``
+To simulate one step, simply call ``eng.next_step()``. All other data access/control APIs should be called after ``next_step()``.
 
 .. code-block:: python
 
@@ -95,9 +96,10 @@ Here we provide a sample code for running our simulator, which can be found in t
 
     engine = simulator.Engine(specified_run_name="test")
 
-    engine.reset()
+    engine.reset() # reset should be called right after the create of engine
+
     for i in range(period):
-        engine.next_step()
+        engine.next_step() # all data access/control APIs should be called after next_step()
         print(engine.get_current_time())
         print(engine.get_man_visited_history(1))
         print(engine.get_man_infection_state(1))
@@ -144,7 +146,9 @@ We also provide simulaiton logs to competetors.
 
 1. The city-wide daily log file ``cnt_xxx.txt``.
 
-2. The POI level daily log file ``hex_cnt_xxx.txt``.
+2. The area level daily log file ``hex_cnt_xxx.txt``.
+
+3. The city-wide daily r file ``r0_xxx.txt``.
 
 
 Their Formats are as follows:
@@ -201,7 +205,7 @@ Their Formats are as follows:
 +====+====================+===========+==============+==================================+
 | 0  | day                | int       | 0            | Current day in simulation        |
 +----+--------------------+-----------+--------------+----------------------------------+
-| 1  | poi_id             | int       | 0            | POI id                           |
+| 1  | area_id            | int       | 0            | area id                          |
 +----+--------------------+-----------+--------------+----------------------------------+
 | 2  | lat                | double    | 114.05019    | latitude                         |
 +----+--------------------+-----------+--------------+----------------------------------+
