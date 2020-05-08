@@ -78,7 +78,7 @@ Data Access API
 
 ``get_region_contained_man()``:
 
-- Return: a dictionary with area id as the key, and the list of manID who live in this area as the value 
+- Return: a dictionary with all area id as the keys, and the list of manID who live in this area as the value 
 
 ``get_region_infected_cnt(areaID)``:
 
@@ -88,28 +88,28 @@ Data Access API
 
 ``get_life_count()``:
 
-- Return the number of people not in hospital.
+- Return the total number of people not in hospital of the whole environment.
 
 ``get_infect_count()``:
 
-- Return the number of infected people.
+- Return the number of infected people in the whole environment.
 
 
 ``get_hospitalize_count()``:
 
-- Return the number of hospitalized people.
+- Return the number of hospitalized people in the whole environment.
 
 ``get_isolate_count()``:
 
-- Return the number of isolated people.
+- Return the number of isolated people in the whole environment.
 
 ``get_quarantine_count()``:
 
-- Return the number of quanrantined people.
+- Return the number of quanrantined people in the whole environment.
 
 ``get_confine_count()``:
 
-- Return the number of confined people.
+- Return the number of confined people in the whole environment.
 
 
 ``get_stranger_count()``
@@ -124,17 +124,17 @@ Data Access API
 ``get_current_time()``:
 
 - Get simulation time (in hour)
-- Return a ``int``
+- Return a ``int``, starting from 0
 
 ``get_current_hour()``:
 
 - Get simulation time (in hour of day)
-- Return a ``int``
+- Return a ``int``, ranging from 0 to 13
 
 ``get_current_day()``:
 
 - Get simulation time (in day)
-- Return a ``int``
+- Return a ``int``, starting from 0
 
 
 
