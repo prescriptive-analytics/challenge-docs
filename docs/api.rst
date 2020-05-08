@@ -33,6 +33,12 @@ Simulation Config API
 - Simulate one step, a simulation step indicates one hour in the real world.
 
 
+.. note::
+	1. ``reset()`` should be called every time we creat an engine with ``Engine()``
+	2. All the data acess/ intervention APIs should be called after ``next_step()``
+	3. All the IDs for men and areas start from 0.
+
+
 Data Access API
 ===============
 
@@ -47,9 +53,6 @@ Data Access API
 
 - Args: manID - id for man
 - Return: instervention status of this man, ``0: no such man id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
-
-.. note::
-	All the IDs for men and areas start from 0.
 
 
 ``get_region_visited_history(areaID)``:
