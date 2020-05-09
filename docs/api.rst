@@ -55,7 +55,7 @@ Data Access API
 - Return: instervention status of this individual, ``0: no such individual id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
 
 
-``get_region_visited_history(areaID)``:
+``get_area_visited_history(areaID)``:
 
 - Args: areaID - id for the area
 - Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
@@ -76,11 +76,11 @@ Data Access API
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
-``get_region_contained_man()``:
+``get_area_contained_man()``:
 
 - Return: a dictionary with all area id as the keys, and the list of individualID who live in this area as the value 
 
-``get_region_infected_cnt(areaID)``:
+``get_area_infected_cnt(areaID)``:
 
 - Args: areaID
 - Return: an int representing the number of infected people in this area

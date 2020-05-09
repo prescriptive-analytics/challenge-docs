@@ -1,3 +1,3 @@
-# Challenge Docs
+# chanllenge-docs
 
-[Welcome to Read the Mobility Intervention of Epidemics Challenge!](https://hzw77-demo.readthedocs.io/en/latest/)
+[Welcome to the Mobility Intervention for Epidemic Challenge!](https://hzw77-demo.readthedocs.io/en/latest/)
