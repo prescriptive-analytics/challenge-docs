@@ -43,42 +43,42 @@ Data Access API
 ===============
 
 
-``get_man_infection_state(manID)``:
+``get_man_infection_state(individualID)``:
 
-- Args: manID - id for man
-- Return: infection status of this man, ``1: susceptible``, ``2: pre-symptomatic``, ``3: symptomatic``, ``4: critical``, ``5: recovered``.
+- Args: individualID - id for individual
+- Return: infection status of this individual, ``1: susceptible``, ``2: pre-symptomatic``, ``3: symptomatic``, ``4: critical``, ``5: recovered``.
 
 
-``get_man_intervention_state(manID)``:
+``get_man_intervention_state(individualID)``:
 
-- Args: manID - id for man
-- Return: instervention status of this man, ``0: no such man id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
+- Args: individualID - id for individual
+- Return: instervention status of this individual, ``0: no such individual id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
 
 
 ``get_region_visited_history(areaID)``:
 
 - Args: areaID - id for the area
 - Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
-[[manID1, manID2, manID3, ...], [manID7, manID8,]]
+[[individualID1, individualID2, individualID3, ...], [individualID7, individualID8,]]
 
 
-``get_man_visited_history(manID)``:
+``get_man_visited_history(individualID)``:
 
-- Args: manID
+- Args: individualID
 - Return: a 1D list of the id of the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list.
 [areaID1, areaID2, ...].
 
 
-``get_man_visited_history_with_p_infection(manID)``:
+``get_man_visited_history_with_p_infection(individualID)``:
 
-- Args: manID
+- Args: individualID
 - Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_man_visited_history``.
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
 ``get_region_contained_man()``:
 
-- Return: a dictionary with all area id as the keys, and the list of manID who live in this area as the value 
+- Return: a dictionary with all area id as the keys, and the list of individualID who live in this area as the value 
 
 ``get_region_infected_cnt(areaID)``:
 
@@ -144,21 +144,21 @@ Intervention API
 ``set_man_isolate_days(days_to_isolate)``: 
 
 - Args: days_to_isolate 
-- a dictionary with manID as key and days for each person to be isolated as value.
+- a dictionary with individualID as key and days for each person to be isolated as value.
 
 ``set_man_quarantine_days(days_to_quarantine)``:
 
 - Args: days_to_quarantine 
-- a dictionary with manID as key and days for each person to be quarantined as value.
+- a dictionary with individualID as key and days for each person to be quarantined as value.
 
 ``set_man_confine_days(days_to_confine)``:
 
-- Args: days_to_confine - a dictionary with manID as key and days for each person to be confined as value.
+- Args: days_to_confine - a dictionary with individualID as key and days for each person to be confined as value.
 
 ``set_man_to_treat(if_treat)``
 
 - Args: if_treat 
-- a dictionary with manID as key and whether he/she is sent to be treated as value.
+- a dictionary with individualID as key and whether he/she is sent to be treated as value.
 
 
 

@@ -106,10 +106,10 @@ Here we provide a sample code for running our simulator, which can be found in t
         print(engine.get_man_visited_history(1))
         print(engine.get_region_infected_cnt(1))
 
-        engine.set_man_confine_days({1: 5}) # {manID: day}
-        engine.set_man_quarantine_days({2: 5}) # {manID: day}
-        engine.set_man_isolate_days({3: 5}) # {manID: day}
-        engine.set_man_to_treat({4: True}) # {manID: day}
+        engine.set_man_confine_days({1: 5}) # {individualID: day}
+        engine.set_man_quarantine_days({2: 5}) # {individualID: day}
+        engine.set_man_isolate_days({3: 5}) # {individualID: day}
+        engine.set_man_to_treat({4: True}) # {individualID: day}
 
     del engine
 
