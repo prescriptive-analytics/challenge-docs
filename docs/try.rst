@@ -101,15 +101,15 @@ Here we provide a sample code for running our simulator, which can be found in t
     for i in range(period):
         engine.next_step() # all data access/control APIs should be called after next_step()
         print(engine.get_current_time())
-        print(engine.get_man_visited_history(1))
-        print(engine.get_man_infection_state(1))
-        print(engine.get_man_visited_history(1))
+        print(engine.get_individual_visited_history(1))
+        print(engine.get_individual_infection_state(1))
+        print(engine.get_individual_visited_history(1))
         print(engine.get_region_infected_cnt(1))
 
-        engine.set_man_confine_days({1: 5}) # {individualID: day}
-        engine.set_man_quarantine_days({2: 5}) # {individualID: day}
-        engine.set_man_isolate_days({3: 5}) # {individualID: day}
-        engine.set_man_to_treat({4: True}) # {individualID: day}
+        engine.set_individual_confine_days({1: 5}) # {individualID: day}
+        engine.set_individual_quarantine_days({2: 5}) # {individualID: day}
+        engine.set_individual_isolate_days({3: 5}) # {individualID: day}
+        engine.set_individual_to_treat({4: True}) # {individualID: day}
 
     del engine
 
