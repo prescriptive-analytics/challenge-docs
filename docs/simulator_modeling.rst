@@ -112,9 +112,8 @@ We can provide 5 levels of mobility intervention to each individual:
 - Level 4 - Hospitalize: The individual is under treatment in the hospital. 
 
 .. note::
-    When an individual is intended with multiple interventions , only the highest level of intervention will be applied.
-
-
+    - When an individual is intended with multiple interventions , only the highest level of intervention will be applied.
+    - Intervention actions are only effective when being set at the start of one day.
 
 
 Evaluation Metrics
