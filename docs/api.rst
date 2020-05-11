@@ -141,6 +141,8 @@ Data Access API
 Intervention API
 ===========
 
+Intervention APIs are only effective when being called at the start of one day.
+
 ``set_individual_isolate_days(days_to_isolate)``: 
 
 - Args: days_to_isolate 

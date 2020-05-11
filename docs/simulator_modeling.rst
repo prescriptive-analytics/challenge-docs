@@ -85,7 +85,7 @@ An individual’s health status follows the stages below:
     * From Stage 3 to Stage 4, there is a development time period :math:`d \sim \mathcal{N}(\mu, \phi)`.
 
 - Stage 5. ``Recovered``: recovered and resistant
-    * From Stage 4 to Stage 5, he/she will recover after being hospitalized consecutively for :math:`TREAT` days, and become immune to the disease.
+    * From Stage 3/4 to Stage 5, he/she will recover after being hospitalized consecutively for :math:`TREAT` days, and become immune to the disease.
 
 +-------------+---+-------------+---+-------------+---+---------------+-----+
 | :math:`INC` | 3 | :math:`\mu` | 2 |:math:`\phi` | 3 | :math:`TREAT` | 15  |
