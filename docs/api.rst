@@ -58,7 +58,7 @@ Data Access API
 ``get_area_visited_history(areaID)``:
 
 - Args: areaID - id for the area
-- Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. 
+- Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. Specifically, ``areaID=-1`` stands for hospital.
 [[individualID1, individualID2, individualID3, ...], [individualID7, individualID8,]]
 
 
