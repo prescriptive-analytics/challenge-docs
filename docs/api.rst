@@ -48,11 +48,13 @@ Data Access API
 - Args: individualID - id for individual
 - Return: infection status of this individual, ``1: susceptible or pre-symptomatic``, ``3: symptomatic``, ``4: critical``, ``5: recovered``.
 
+.. note::
+	The returned infection state is 1 when an individual is susceptible or pre-symptomatic.
 
 ``get_individual_intervention_state(individualID)``:
 
 - Args: individualID - id for individual
-- Return: instervention status of this individual, ``0: no such individual id``,``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
+- Return: instervention status of this individual, ``0: no such individual id``, ``1: without intervention``, ``2: confined``, ``3: quarantined``, ``4: isolated``, ``5: hospitalized``.
 
 
 ``get_area_visited_history(areaID)``:
@@ -146,12 +148,12 @@ Intervention APIs are only effective when being called at the start of one day.
 ``set_individual_isolate_days(days_to_isolate)``: 
 
 - Args: days_to_isolate 
-- a dictionary with individualID as key and days for each person to be isolated as value.
+	- a dictionary with individualID as key and days for each person to be isolated as value.
 
 ``set_individual_quarantine_days(days_to_quarantine)``:
 
 - Args: days_to_quarantine 
-- a dictionary with individualID as key and days for each person to be quarantined as value.
+	- a dictionary with individualID as key and days for each person to be quarantined as value.
 
 ``set_individual_confine_days(days_to_confine)``:
 
@@ -160,7 +162,7 @@ Intervention APIs are only effective when being called at the start of one day.
 ``set_individual_to_treat(if_treat)``
 
 - Args: if_treat 
-- a dictionary with individualID as key and whether he/she is sent to be treated as value.
+	- a dictionary with individualID as key and whether he/she is sent to be treated as value.
 
 
 

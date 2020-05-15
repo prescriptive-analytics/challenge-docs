@@ -129,7 +129,7 @@ Before submission, make sure:
  
 - You are running the simulation for 840 time steps (60 simulation days in simulator). 
 
-- Run 10 times of the experiments and set the engine write mode to "append" with ``simulator.Engine(write_mode="append")``. 
+- You are required to set the engine write mode to "append" with ``simulator.Engine(write_mode="append")``, and run 10 times of your subsequent codes. 
 
 - Please upload the ``sub_xxx.txt`` to the website.
 
