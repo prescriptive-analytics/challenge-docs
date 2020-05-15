@@ -12,7 +12,7 @@ Installation Guide
 
 2. Preparation
 
-    2.1 Install boost library and make sure you have libboost path added to your system path 
+    2.1 Install boost library and make sure you have libboost path added to your system path. We sugguest to use `boost 1.58.0 <https://sourceforge.net/projects/boost/files/boost-binaries/1.58.0/>`_.
 
     - Mac OS: `brew install boost`
 
