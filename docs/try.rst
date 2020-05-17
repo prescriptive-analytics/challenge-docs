@@ -49,6 +49,10 @@ Installation Guide
     eng = simulator.Engine
 
 
+.. note::
+    You might need to rename the ``.so`` file that corresponds with your system and python to ``simulator.so``.
+
+
 Run Simulation
 ==============
 
