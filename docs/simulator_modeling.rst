@@ -42,7 +42,7 @@ The disease can transmit from an infected individual through two kinds of contac
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
-| :math:`P_c`     | 1.5e-3  |                 |   | :math:`P_s`     | 3e-6   |     --------    |    |
+| :math:`P_c`     | 1.5e-3  |                 |   | :math:`P_s`     | 3e-6   |                 |    |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 
 .. note::
@@ -56,7 +56,7 @@ An individual’s health status follows the stages below:
 
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 | Health status               | Description                  | Infected | Contagious | Symptoms | Immune |
-+=============================+==============================+==========+============+==========+========+
++-----------------------------+------------------------------+----------+------------+----------+--------+
 | 1. Susceptible case         | liable to be infected        | -        | -          | -        | -      |
 +-----------------------------+------------------------------+----------+------------+----------+--------+
 | 2. Pre-symptomatic          | before the onset of symptoms | ✔        | ✔          | -        | -      |
@@ -111,9 +111,27 @@ We can provide 5 levels of mobility intervention to each individual:
 - Level 3 - Isolate: The individual is isolated, even from the acquaintance contacts living in the same residential area.
 - Level 4 - Hospitalize: The individual is under treatment in the hospital. 
 
+
++------------------+-----------------------------------------------------------------------+
+|                  |                            In Contact with?                           |
++------------------+-----------------------------+-----------------------------------------+
+| Intervention     | acquaintance contacts       | stranger contacts                       |
++------------------+-----------------------------+-----------------------------------------+
+| #0: No Intervene | ✔ (Residential and working) | ✔ (Residential, working and commercial) |
++------------------+-----------------------------+-----------------------------------------+
+| #1: Confine      | ✔ (Residential only)        | ✔ (Residential only)                    |
++------------------+-----------------------------+-----------------------------------------+
+| #2: Quarantine   | ✔                           | ✘                                       |
++------------------+-----------------------------+-----------------------------------------+
+| #3: Isolate      | ✘                           | ✘                                       |
++------------------+-----------------------------+-----------------------------------------+
+| #4: Hopitalize   | ✘                           | ✘                                       |
++------------------+-----------------------------+-----------------------------------------+
+
 .. note::
     - When an individual is intended with multiple interventions , only the highest level of intervention will be applied.
     - Intervention actions are only effective when being set at the start of one day.
+
 
 
 Evaluation Metrics
