@@ -108,7 +108,7 @@ Here we provide a sample code for running our simulator, which can be found in t
         print(engine.get_individual_visited_history(1))
         print(engine.get_individual_infection_state(1))
         print(engine.get_individual_visited_history(1))
-        print(engine.get_region_infected_cnt(1))
+        print(engine.get_area_infected_cnt(1))
 
         engine.set_individual_confine_days({1: 5}) # {individualID: day}
         engine.set_individual_quarantine_days({2: 5}) # {individualID: day}
