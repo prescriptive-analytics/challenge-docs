@@ -42,6 +42,26 @@ Simulation Config API
 Data Access API
 ===============
 
+``get_individual_residential_area(individualID)``:
+
+- Args: individualID - id for individual
+- Return: the ID of this individual's residential area.
+
+``get_individual_working_area(individualID)``:
+
+- Args: individualID - id for individual
+- Return: the ID of this individual's working area.
+
+``get_individual_residential_acq(individualID)``:
+
+- Args: individualID - id for individual
+- Return: an list of individual IDs of this individual's acquantaince contacts in residential area.
+
+``get_individual_working_acq(individualID)``:
+
+- Args: individualID - id for individual
+- Return: an list of individual IDs of this individual's acquantaince contacts in working area.
+
 
 ``get_individual_infection_state(individualID)``:
 
@@ -60,7 +80,7 @@ Data Access API
 ``get_area_visited_history(areaID)``:
 
 - Args: areaID - id for the area
-- Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. Specifically, ``areaID=-1`` stands for hospital.
+- Return: a 2D list of the visited history of one area in past 5 days. Each of the inner 1D list represents the history for one hour. The order of the list is chronological, with the earlist time appearing the first in the list. Specifically, ``areaID=-1`` stands for hospital and isolation.
 [[individualID1, individualID2, individualID3, ...], [individualID7, individualID8,]]
 
 
@@ -78,9 +98,15 @@ Data Access API
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
 
 
+``get_all_area_category()``:
+
+- Return:  a dictionary with all area id as the keys, and the category of the area as the value, ``0: residential``, ``1: working``, ``2: commercial``
+
+
 ``get_area_contained_individual()``:
 
 - Return: a dictionary with all area id as the keys, and the list of individualID who live in this area as the value 
+
 
 ``get_area_infected_cnt(areaID)``:
 
@@ -157,12 +183,13 @@ Intervention APIs are only effective when being called at the start of one day.
 
 ``set_individual_confine_days(days_to_confine)``:
 
-- Args: days_to_confine - a dictionary with individualID as key and days for each person to be confined as value.
+- Args: days_to_confine
+    - a dictionary with individualID as key and days for each person to be confined as value.
 
 ``set_individual_to_treat(if_treat)``
 
 - Args: if_treat 
-	- a dictionary with individualID as key and whether he/she is sent to be treated as value.
+	- a dictionary with individualID as key and whether he/she is sent to be treated as value. Once set true, he/she will be staying in hospital for :math:`TREAT` days (:math:`TREAT=15`).
 
 
 
