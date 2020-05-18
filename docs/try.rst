@@ -202,7 +202,7 @@ Their Formats are as follows:
 +----+--------------------+-----------+--------------+---------------------------------------------------------+
 
 
-2. `hex_cnt_xxx.txt`: Region-level replay data file.
+2. `hex_cnt_xxx.txt`: Area-level replay data file.
 
 +----+--------------------+-----------+--------------+----------------------------------+
 | #  | header             | Data Tpye | Example Data | Description                      |

@@ -5,6 +5,7 @@ Simulation Initialization API
 =====================
 
 ``Engine(thread_num=1, write_mode="append", specified_run_name="test")``:
+
 - Args: 
 
 	- ``thread_num``: number of threads.
@@ -30,6 +31,7 @@ Simulation Config API
 - Input format: int
 
 ``next_step()``:
+
 - Simulate one step, a simulation step indicates one hour in the real world.
 
 
@@ -94,8 +96,14 @@ Data Access API
 ``get_individual_visited_history_with_p_infection(individualID)``:
 
 - Args: individualID
-- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_individual_visited_history``.
+- Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_individual_visited_history``. 
 [[p_acq1, p_stranger1], [p_acq2, p_stranger2], ...]
+
+
+.. note::
+	The calculation of the probability is based on the SIR model from this paper: 
+
+	- William Ogilvy Kermack and Anderson G McKendrick. A contribution to the mathematical theory of epidemics. Proceedings of the royal society of london. Series A, Containing papers of a mathematical and physical character, 115(772):700–721, 1927.
 
 
 ``get_all_area_category()``:
