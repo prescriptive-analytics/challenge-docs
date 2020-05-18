@@ -62,6 +62,7 @@ An individual’s health status follows the stages below:
 | 2. Pre-symptomatic  | before the onset of symptoms | ✔        | ✔          |          |        |
 +---------------------+------------------------------+----------+------------+----------+--------+
 | 3. Symptomatic      | showing signs and symptoms   | ✔        | ✔          | ✔        |        |
+|                     |                              |          |            |          |        |
 |                     | compatible with infection    |          |            |          |        |
 +---------------------+------------------------------+----------+------------+----------+--------+
 | 4. Critical         | symptomatic with severe      | ✔        | ✔          | ✔        |        |
