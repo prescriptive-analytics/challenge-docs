@@ -65,7 +65,7 @@ Initiate engine
     
     import simulator
     eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="test")
-    eng.reset()
+    eng.reset() # reset() should be called right after the create of engine
 
 - ``thread_num``: number of threads.
 - ``specified_run_name``: results saving folder name.
