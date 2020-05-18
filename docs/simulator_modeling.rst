@@ -66,6 +66,7 @@ An individual’s health status follows the stages below:
 |                     | compatible with infection    |          |            |          |        |
 +---------------------+------------------------------+----------+------------+----------+--------+
 | 4. Critical         | symptomatic with severe      | ✔        | ✔          | ✔        |        |
+|                     |                              |          |            |          |        |
 |                     | acute respiratory illness    |          |            |          |        |
 +---------------------+------------------------------+----------+------------+----------+--------+
 | 5. Recovered        | recovered and resistant      |          |            |          | ✔      |
