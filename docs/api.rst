@@ -182,23 +182,27 @@ Intervention APIs are only effective when being called at the start of one day.
 ``set_individual_isolate_days(days_to_isolate)``: 
 
 - Args: days_to_isolate 
-	- a dictionary with individualID as key and days for each person to be isolated as value.
+	- a dictionary with individualID as key and days for each person to be isolated as value. The days should be positive integers (:math:`\geq 1`). If the value of day is smaller than 1, the corresponding individual to isolate 1 day.
 
 ``set_individual_quarantine_days(days_to_quarantine)``:
 
 - Args: days_to_quarantine 
-	- a dictionary with individualID as key and days for each person to be quarantined as value.
+	- a dictionary with individualID as key and days for each person to be quarantined as value. The days should be positive integers (:math:`\geq 1`). If the value of day is smaller than 1, the corresponding individual to quarantine 1 day.
 
 ``set_individual_confine_days(days_to_confine)``:
 
 - Args: days_to_confine
-    - a dictionary with individualID as key and days for each person to be confined as value.
+    - a dictionary with individualID as key and days for each person to be confined as value. The days should be positive integers (:math:`\geq 1`). If the value of day is smaller than 1, the corresponding individual to confine 1 day.
 
 ``set_individual_to_treat(if_treat)``
 
 - Args: if_treat 
-	- a dictionary with individualID as key and whether he/she is sent to be treated as value. Once set true, he/she will be staying in hospital for :math:`TREAT` days (:math:`TREAT=15`).
+	- a dictionary with individualID as key and whether he/she is sent to be treated as value. Once set true, he/she will be staying in hospital for :math:`𝑇𝑅𝐸𝐴𝑇` days (:math:`𝑇𝑅𝐸𝐴𝑇=15`).
 
+.. note::
+    - When an individual is intended with multiple interventions, only the highest level of intervention will be applied.
+    - When an individual is intended with multiple interventions at different days, the later intervention will update the older ones. For example, an individual is intended to be isolated :math:`N` days at the :math:`i`-th day. If later on day :math:`i+j`-th :math:`(j<N)`, he/she is set up to be confined, his/her intervention status will be updated to be confined, starting from :math:`i+j`-th day.
+    - Intervention actions are only effective when being set at the start of one day.
 
 
 Other API
