@@ -244,5 +244,5 @@ Their Formats are as follows:
 .. note:: 
     The calculation of R is based on: 
 
-    - Fred Brauer. (2010, July). Epidemic Models I: Reeproduction Numbers and Final Size Relations. Summer 2010 Thematic Program on the Mathematics of Drug Resistance in Infectious Diseases, Toronto, Canada.
+    - Fred Brauer. (2010, July). Epidemic Models I: Reproduction Numbers and Final Size Relations. Summer 2010 Thematic Program on the Mathematics of Drug Resistance in Infectious Diseases, Toronto, Canada.
 
