@@ -35,7 +35,7 @@ Disease Transmission Model
 ++++++++++++++++++++++++++
 The disease can transmit from an infected individual through two kinds of contacts:
 
-- Acquaintance contacts: An individual has a fixed small group of acquaintance contacts with size :math:`K_l \sim U(l_{c1}, l_{c2})` in his/her residential area, and a fixed group of acquaintance contacts with size :math:`K_w \sim U(w_{c1}, w_{c2})` in his/her working area. Note that not all the individuals in the same residential/worling area are the acquaintance contactsof the individual. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
+- Acquaintance contacts: An individual has a fixed small group of acquaintance contacts with size :math:`K_l \sim U(l_{c1}, l_{c2})` in his/her residential area, and a fixed group of acquaintance contacts with size :math:`K_w \sim U(w_{c1}, w_{c2})` in his/her working area. Note that not all the individuals in the same residential/working area are the acquaintance contactsof the individual. At each timestamp, there is a probability :math:`P_c` for an individual to get infected from an infected acquaintance contact.
 
 - Stranger contacts: An individual could be in contact with strangers visiting the same area at the same time. At each timestamp, there is probability :math:`P_s` for an individual to get infected from an infected stranger contact. 
 
