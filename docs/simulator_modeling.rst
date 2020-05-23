@@ -46,7 +46,7 @@ The disease can transmit from an infected individual through two kinds of contac
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 
 .. note::
-    The parameters are calibrated to align with the :math:`R_0` of COVID-19 (2 ~ 2.5) provided by Wold Health Organization:
+    The parameters are calibrated to align with the :math:`R_0` of COVID-19 (2 ~ 2.5) provided by World Health Organization:
 
     - World Health Organization. (2020, May 8). Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19). Retrieved May 8, 2020, from https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf
 
