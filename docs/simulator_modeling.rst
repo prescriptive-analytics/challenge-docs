@@ -139,7 +139,7 @@ Evaluation Metrics
 
 We first define two basic metrics:
 
-- :math:`I`: the total number of infected people from day 1 to day :math:`T`.
+- :math:`I`: the total number of infected people on day :math:`T`.
 - :math:`Q`: the weighted sum of :math:`N_v`, where if an individual is under intervention :math:`v` for one day, it will put towards adding 1 towards :math:`N_v` (:math:`v\in\{hospitalized, isolated, quarantined, confined\}`):
 
     - :math:`Q = \lambda_h * N_{hospitalized} + \lambda_i * N_{isolated} + \lambda_q * N_{quarantined} + \lambda_c * N_{confined}`
