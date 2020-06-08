@@ -7,6 +7,12 @@ We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit
 Installation Guide
 ==================
 
+Our simulator can run in multiple platforms. Here, we provide two kinds of installation.
+
+
+Install in your environment
+---------------------------
+
 1. Check that you have python 3 installed. Other version of python might work, however, we only tested on python with version >= 3.6.
 
 
@@ -51,6 +57,53 @@ Installation Guide
 
 .. note::
     You might need to rename the ``.so`` file that corresponds with your system and python to ``simulator.so``.
+
+
+Use a docker
+------------
+
+1. Install docker with the `docker instruction <https://www.docker.com/products/docker-desktop>`_
+
+2. Pull the docker image. Please pull from docker hub, with the following command in your terminal.
+
+.. code-block:: shell
+
+    docker pull episim2020/simulator:latest
+
+4. Clone Starter-Kit from GitHub.
+
+.. code-block:: shell
+    
+    git clone https://github.com/prescriptive-analytics/starter-kit.git
+
+
+3. Create a docker container and map starter-kit into the containter by typing the following command in your terminal.
+
+.. code-block:: shell
+
+   docker run -it -v path/to/starter-kit/in/your/local/computer:path/to/starter-kit/in/docker/containter episim2020/simulator
+
+4. You should have entered the container. Please navigate to the starter-kit folder in docker containter, then you can run the following command to start an experiment.
+
+.. code-block:: shell
+
+   python example.py
+
+
+.. note::
+
+    1. For other uses of docker, please refer to `docker run <https://docs.docker.com/engine/reference/run/>`_.
+
+    2. Please pay attention to the security of your files, since docker container will be granted the access to change your files in the folders that you have mapped into the container. Please use carefully at your own risk.
+
+    3. The dockerfile to build this image is also attached here. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
+
+    .. code-block:: shell 
+
+        docker build -t simulator -f simulator.Dockerfile 
+        
+
+    4. Docker container will be destroyed after you exit. If you wish to install your own package, we recommend you to build your own image based on our image. Please refer to `this link <https://docs.docker.com/engine/reference/commandline/build/>`_
 
 
 Run Simulation
