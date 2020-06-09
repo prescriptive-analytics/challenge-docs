@@ -96,12 +96,12 @@ Use a docker
 
     2. Please pay attention to the security of your files, since docker container will be granted the access to change your files in the folders that you have mapped into the container. Please use carefully at your own risk.
 
-    3. The dockerfile to build this image is also attached here. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
+    3. The dockerfile to build this image is also attached `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/simulator.Dockerfile>`_. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
 
     .. code-block:: shell 
 
         docker build -t simulator -f simulator.Dockerfile 
-        
+
 
     4. Docker container will be destroyed after you exit. If you wish to install your own package, we recommend you to build your own image based on our image. Please refer to `this link <https://docs.docker.com/engine/reference/commandline/build/>`_
 
