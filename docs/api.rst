@@ -93,7 +93,7 @@ Data Access API
 [areaID1, areaID2, ...].
 
 
-``get_individual_visited_history_with_p_infection(individualID)``:
+``get_individual_visited_history_with_p_infection(individualID)``: (This API is deprecated.)
 
 - Args: individualID
 - Return: a 2D list of the probabilities of geting infected (from acquantaince contacts and stranger contacts) in the areas that he/she has visited in past 5 days. The order of the list is chronological, with the earlist time appearing the first in the list. This should be corresponding with  ``get_individual_visited_history``. 
@@ -119,14 +119,14 @@ Data Access API
 ``get_area_infected_cnt(areaID)``:
 
 - Args: areaID
-- Return: an int representing the number of infected people in this area
+- Return: an int representing the number of infected (symptomatic and critical) people in this area
 
 
 ``get_life_count()``:
 
 - Return the total number of people not in hospital of the whole environment.
 
-``get_infect_count()``:
+``get_infect_count()``: (This API is deprecated.)
 
 - Return the number of infected people in the whole environment.
 
