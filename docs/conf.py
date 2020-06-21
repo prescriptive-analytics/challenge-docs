@@ -48,7 +48,7 @@ copyright = '2020, Simulator'
 author = 'Hua Wei'
 
 # The short X.Y version
-version = ''
+version = 'round2'
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
