@@ -45,6 +45,7 @@ Install in your environment
 .. code-block:: shell
     
     git clone https://github.com/prescriptive-analytics/starter-kit.git
+    git checkout final 
 
     
 4. Go to Simualtor project's root directory and run the following to test the installation
@@ -75,6 +76,7 @@ Use a docker
 .. code-block:: shell
     
     git clone https://github.com/prescriptive-analytics/starter-kit.git
+    git checkout final
 
 
 3. Create a docker container and map starter-kit into the containter by typing the following command in your terminal.
