@@ -4,13 +4,14 @@ APIs
 Simulation Initialization API
 =====================
 
-``Engine(thread_num=1, write_mode="append", specified_run_name="test")``:
+``Engine(thread_num=1, write_mode="append", specified_run_name="test", scenario="scenario1")``:
 
 - Args: 
 
 	- ``thread_num``: number of threads.
 	- ``specified_run_name``: results saving folder name.
 	- ``write_mode``: mode of saving simulation results, ``write`` will overwrite results from different rounds of simulation in the same ``specified_run_name`` folder, ``append`` will append the results from current simulation round to existing result files.
+	- ``scenario``: the scenario to choose to run the experiment. Possible choices are ``scenario1``, ``scenario2``, ``scenario3``, ``scenario4``, ``scenario5``, and ``submit``. All other arguments will be invalid.
 
 - Return: an initialized engine without ``reset()``, should call ``reset()`` after this function.
 

@@ -117,12 +117,14 @@ Initiate engine
 .. code-block:: python
     
     import simulator
-    eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="test")
+    eng = simulator.Engine(thread_num=1, write_mode="append", specified_run_name="test", scenario="scenario1")
     eng.reset() # reset() should be called right after the create of engine
 
 - ``thread_num``: number of threads.
 - ``specified_run_name``: results saving folder name.
 - ``write_mode``: mode of saving simulation results, ``write`` will overwrite results from different rounds of simulation in the same ``specified_run_name`` folder, ``append`` will append the results from current simulation round to existing result files.
+- ``scenario``: the scenario to choose to run the experiment. Possible choices are ``scenario1``, ``scenario2``, ``scenario3``, ``scenario4``, ``scenario5``, and ``submit``. All other arguments will be invalid.
+
 
 
 Simulate one step
@@ -141,7 +143,7 @@ To simulate one step, simply call ``eng.next_step()``. All other data access/con
 Sample codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_. 
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/final/example.py>`_. 
 
 .. code-block:: python
 
@@ -151,24 +153,23 @@ Here we provide a sample code for running our simulator, which can be found in t
 
     period = 840
 
-    engine = simulator.Engine(specified_run_name="test")
+    engine = simulator.Engine(thread_num=1, write_mode="write", specified_run_name="test", scenario="scenario1")
 
-    engine.reset() # reset should be called right after the create of engine
-
+    engine.reset()
     for i in range(period):
-        engine.next_step() # all data access/control APIs should be called after next_step()
-        print(engine.get_current_time())
-        print(engine.get_individual_visited_history(1))
-        print(engine.get_individual_infection_state(1))
-        print(engine.get_individual_visited_history(1))
-        print(engine.get_area_infected_cnt(1))
+        engine.next_step()
+        engine.get_current_time()
+        engine.get_individual_visited_history(1)
+        engine.get_individual_infection_state(1)
+        engine.get_individual_visited_history(1)
+        engine.get_area_infected_cnt(1)
 
         engine.set_individual_confine_days({1: 5}) # {individualID: day}
         engine.set_individual_quarantine_days({2: 5}) # {individualID: day}
         engine.set_individual_isolate_days({3: 5}) # {individualID: day}
         engine.set_individual_to_treat({4: True}) # {individualID: day}
 
-    del engine
+    del engine  
 
 
 
@@ -182,16 +183,46 @@ Submission
 -----
 
 
+In order to generate the submission, you need to select the scenario as "submit". This will run the simulation for 5 scenarios, with each scenario for 3 rounds. Every round will have a length of 840 steps (60 simulation days). Every 840 steps, the simulator will automatically start a new round. Every 840*3 steps, the simulator will automatically switch to a new scenario.
+
+
+.. code-block:: python
+
+    import simulator
+    import os
+    import json
+
+    period = 840 * 15
+
+    engine = simulator.Engine(thread_num=1, write_mode="write", specified_run_name="test", scenario="submit")
+
+    engine.reset()
+    for i in range(period):
+        engine.next_step()
+        engine.get_current_time()
+        engine.get_individual_visited_history(1)
+        engine.get_individual_infection_state(1)
+        engine.get_individual_visited_history(1)
+        engine.get_area_infected_cnt(1)
+
+        engine.set_individual_confine_days({1: 5}) # {individualID: day}
+        engine.set_individual_quarantine_days({2: 5}) # {individualID: day}
+        engine.set_individual_isolate_days({3: 5}) # {individualID: day}
+        engine.set_individual_to_treat({4: True}) # {individualID: day}
+
+    del engine  
+
+
 Before submission, make sure:
  
 - You are running the simulation for 840 time steps (60 simulation days in simulator). 
 
-- You are required to set the engine write mode to "append" with ``simulator.Engine(write_mode="append")``, and run 10 times of your subsequent codes. 
+- You are required to set the engine scenario to "submit" with ``simulator.Engine(scenario="submit")``, and run 840*15 steps of your subsequent codes. 
 
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/submit.py>`_.
+Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/final/submit.py>`_.
 
 
 
