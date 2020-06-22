@@ -2,7 +2,7 @@ Mobility Intervention of Epidemics Challenge
 ======================
 
 
-`Home Page <http://116.62.170.46:8980/>`_.
+`Home Page <http://116.62.170.46:5000/>`_.
 
 The challenge would like to gather the global research community to apply recent advances in data science and AI to generate new insights in support of the fight against pandemics like COVID-19. 
 
