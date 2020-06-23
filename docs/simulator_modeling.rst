@@ -6,11 +6,14 @@ Simulator Modeling
 
 The simulator simulates individual mobility in a city of :math:`R` areas with :math:`M` people. Each area belongs to one of the three categories: working, residential, and commercial. An individual is associated with two fixed POIs: one for residential, and one for working. 
 
-+------------------+---+------------------+--------+
-|     Parameter specification in this challenge    |
-+------------------+---+------------------+--------+
-| R                | 11|           M      | 10000  |
-+------------------+---+------------------+--------+
++----------------------+---+------------------+--------+
+|     Default parameters in the simulator              |
++----------------------+---+------------------+--------+
+| :math:`\mathcal{A}`  | 11|           M      | 10000  |
++----------------------+---+------------------+--------+
+
+.. note::
+    - In the competition, we have five simulated scenarios, whose parameters will be specified in XXXX.
 
 
 Human Mobility Model
@@ -42,7 +45,7 @@ The disease can transmit from an infected individual through two kinds of contac
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 | :math:`l_{c_1}` | 1       | :math:`l_{c_2}` | 6 | :math:`w_{c_1}` | 5      | :math:`w_{c_2}` | 15 |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
-| :math:`P_c`     | 1.5e-3  |                 |   | :math:`P_s`     | 3e-6   |                 |    |
+| :math:`P_c`     | 2.5e-2  |                 |   | :math:`P_s`     | 5e-3   |                 |    |
 +-----------------+---------+-----------------+---+-----------------+--------+-----------------+----+
 
 .. note::
@@ -79,25 +82,27 @@ An individual’s health status follows the stages below:
     * From Stage 1 to Stage 2, people can get infected via contact with infected people, with different probabilities from their contacts.
 
 - Stage 3. ``Symptomatic`` infected:  Infected and showing signs and symptoms
-    * From Stage 2 to Stage 3, there is a fixed incubation period of :math:`INC` days.
+    * From Stage 2 to Stage 3, there is an incubation period of :math:`INC \sim U(inc_1, inc_2)` days.
 
 - Stage 4. Symptomatic infected with ``critical`` health condition
     * From Stage 3 to Stage 4, there is a development time period :math:`d \sim \mathcal{N}(\mu, \phi)`.
 
 - Stage 5. ``Recovered``: recovered and resistant
-    * From Stage 3/4 to Stage 5, he/she will recover after being hospitalized consecutively for :math:`TREAT` days, and become immune to the disease.
+    * Each infected individual can recover through self-recovery or hospitalization. He/she will recover after being hospitalized consecutively for :math:`TREAT` days, and become immune to the disease. He/she can also self-recover after :math:`RECOVER \sim U(rec_1, recc_2)` days.
 
-+-------------+---+-------------+---+-------------+---+---------------+-----+
-| :math:`INC` | 3 | :math:`\mu` | 2 |:math:`\phi` | 3 | :math:`TREAT` | 15  |
-+-------------+---+-------------+---+-------------+---+---------------+-----+
++---------------+---+---------------+---+-------------+---+-------------+---+---------------+-----+
+| :math:`inc_1` | 1 | :math:`inc_2` | 5 | :math:`\mu` | 2 |:math:`\phi` | 3 | :math:`TREAT` | 15  |
++---------------+---+---------------+---+-------------+---+-------------+---+---------------+-----+
+| :math:`rec_1` |15 | :math:`rec_2` | 30|             |   |             |   |               |     |
++---------------+---+---------------+---+-------------+---+-------------+---+---------------+-----+
 
 
 
 .. note::
-	Terms are  in align with recent variations of the Susceptible-Infected-Resistant (SIR) compartment models in the context of Epidemic modeling and WHO guidelines:
+    Terms are  in align with recent variations of the Susceptible-Infected-Resistant (SIR) compartment models in the context of Epidemic modeling and WHO guidelines:
 
-	1. Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
-	2. World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
+    1. Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Abeler-Dörner, L., ... & Fraser, C. (2020). Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing. Science.
+    2. World Health Organization. (2020, April 24). Situation reports. Retrieved April 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/
 
 
 Mobility Intervention Actions
@@ -149,12 +154,12 @@ Based on these two basic metrics, we calculate the following score for this comp
 
 .. math::
 
-	Score = exp\{\frac{I}{\theta_I}\}+Q_w*exp\{\frac{Q}{\theta_Q}\}.
+    Score = exp\{\frac{I}{\theta_I}\}+Q_w*exp\{\frac{Q}{\theta_Q}\}.
 
 Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
-| :math:`\theta_I`   | 500  | :math:`\theta_Q`  | 10000  | :math:`Q_w`       |  1.0   |  :math:`T`        |   60   |
+| :math:`\theta_I`   | 1000 | :math:`\theta_Q`  | 100000 | :math:`Q_w`       |  1.0   |  :math:`T`        |   60   |
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
 | :math:`\lambda_h`  | 1.0  | :math:`\lambda_i` |  0.5   | :math:`\lambda_q` |  0.3   | :math:`\lambda_c` |  0.2   |
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
