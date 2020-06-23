@@ -219,7 +219,9 @@ Before submission, make sure:
  
 - You are running the simulation for 840 time steps (60 simulation days in simulator). 
 
-- You are required to set the engine scenario to "submit" with ``simulator.Engine(scenario="submit")``, and run 840*15 steps of your subsequent codes. 
+- You are required to set the engine scenario to "submit" with ``simulator.Engine(scenario="submit")``, and run 840 steps in each scenatio for 3 times of your subsequent codes. 
+
+- You are supposed to use one model to run over five scenarios.
 
 - Please upload the ``sub_xxx.txt`` to the website.
 
