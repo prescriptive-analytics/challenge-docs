@@ -13,7 +13,7 @@ The simulator simulates individual mobility in a city of :math:`R` areas with :m
 +----------------------+---+------------------+--------+
 
 .. note::
-    - In the competition, we have five simulated scenarios, whose parameters will be specified in XXXX.
+    - In the competition, we have five simulated scenarios, whose parameters will be specified in the `next section <https://hzw77-demo.readthedocs.io/en/round2/scenario.html>`_.
 
 
 Human Mobility Model
