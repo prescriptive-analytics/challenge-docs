@@ -14,5 +14,6 @@ Contents:
 
    introduction
    simulator_modeling
+   scenario
    try
    api
