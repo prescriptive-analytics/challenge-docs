@@ -16,8 +16,9 @@ In this scenario, the default parameters are specified in this section. Unless s
 In this scenario, we aim to simulate a disease with higher infection rates. Specifically, infection rate from acquaintance contact :math:`P_c=0.0375`, infection rate from stranger contact :math:`P_s=0.0075`. Their detailed description can be found `here <https://hzw77-demo.readthedocs.io/en/round2/simulator_modeling.html#disease-transmission-model>`_.
 
 
-3. Late intervention
---------------------
+3. Larger initial infected population
+-------------------------------------
+In this scenario, there is a large infected population at the beginning of the simulation. Specifically, there are 300 individuals at the first day of simulation.
 
 
 4. Larger range of start-working time
