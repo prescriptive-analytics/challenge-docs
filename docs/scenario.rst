@@ -4,11 +4,11 @@ Competition Scenarios and Leaderboard Ranking
 Competition Scenarios
 =====================
 
-In the official competition, we provide five scenarios: 
+In the official competition, we provide five scenarios, each has the following specified parameters: 
 
 1. Default
 ----------
-In this scenario, the default parameters are specified in this section. Unless specified, the parameters in the following scenarios are the same as the default scenario.
+In this scenario, the default parameters are specified in `the previous section <https://hzw77-demo.readthedocs.io/en/round2/simulator_modeling.html>`_. Unless specified, the parameters in the following scenarios are the same as the default scenario.
 
 
 2. Higher infection rates
