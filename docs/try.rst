@@ -1,7 +1,7 @@
 Try it yourself
 *********
 
-We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit/tree/final>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
 
 
 Installation Guide
@@ -40,7 +40,7 @@ Install in your environment
     - Linux: python 3.6
 
 
-3. Clone Starter-Kit from GitHub.
+3. Clone Starter-Kit from GitHub and checkout at `final` branch.
 
 .. code-block:: shell
     
@@ -71,7 +71,7 @@ Use a docker
 
     docker pull episim2020/simulator:latest
 
-4. Clone Starter-Kit from GitHub.
+4. Clone Starter-Kit from GitHub and checkout at `final` branch.
 
 .. code-block:: shell
     
@@ -98,7 +98,7 @@ Use a docker
 
     2. Please pay attention to the security of your files, since docker container will be granted the access to change your files in the folders that you have mapped into the container. Please use carefully at your own risk.
 
-    3. The dockerfile to build this image is also attached `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/simulator.Dockerfile>`_. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
+    3. The dockerfile to build this image is also attached `here <https://github.com/prescriptive-analytics/starter-kit/blob/final/simulator.Dockerfile>`_. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
 
     .. code-block:: shell 
 
