@@ -16,19 +16,19 @@ In this scenario, the default parameters are specified in `the previous section 
 In this scenario, we aim to simulate a disease with higher infection rates. Specifically, infection rate from acquaintance contact :math:`P_c=0.05`, infection rate from stranger contact :math:`P_s=0.01`. Their detailed description can be found `here <https://hzw77-demo.readthedocs.io/en/round2/simulator_modeling.html#disease-transmission-model>`_.
 
 
-3. Larger initial infected population
+3. More areas in the city
+-------------------------
+In this scenario, there will be 98 areas in the city, :math:`\mathcal{A}=98`.
+
+
+4. Larger initial infected population
 -------------------------------------
 In this scenario, there is a large infected population at the beginning of the simulation. Specifically, there are 300 infected individuals at the first day of simulation.
 
 
-4. Larger range of start-working time
+5. Larger range of start-working time
 ----------------------------------------
-In this scenario, each individual will have a larger range of time to go to work. Specifically, the start-working time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})` with :math:`t^d_{s1}=1` and :math:`t^d_{s2}=5`. Their detailed description can be found `here <https://hzw77-demo.readthedocs.io/en/round2/simulator_modeling.html#human-mobility-model>`_.
-
-
-5. More areas in the city
--------------------------
-In this scenario, there will be 98 areas in the city, :math:`\mathcal{A}=98`.
+In this scenario, each individual will have a larger range of time to go to work. Specifically, the start-working time :math:`T^d_{start} \sim U(t^d_{s1}, t^d_{s2})` with :math:`t^d_{s1}=1` and :math:`t^d_{s2}=8`. Their detailed description can be found `here <https://hzw77-demo.readthedocs.io/en/round2/simulator_modeling.html#human-mobility-model>`_.
 
 
 

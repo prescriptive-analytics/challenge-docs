@@ -25,7 +25,7 @@ On weekdays, an individual will start from residential area to working area at a
 On weekends, people may visit a random commercial area at a certain time :math:`T^e_{start} \sim U(t^e_{s1}, t^e_{s2})` with a probability :math:`P^e_{com}` and stay there for :math:`T^e_{com} \sim U (t^e_{c1}, t^e_{c2})` hours. After that, they will return to residential area.
 
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
-| :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 2 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
+| :math:`t^d_{s1}` | 1 | :math:`t^d_{s2}` | 3 | :math:`t_{w1}`    |  7  | :math:`t_{w2}`    | 10  |
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
 | :math:`t^d_{c1}` | 1 | :math:`t^d_{c2}` | 2 | :math:`t^e_{s1}`  |  1  | :math:`t^e_{s2}`  |  5  |
 +------------------+---+------------------+---+-------------------+-----+-------------------+-----+
