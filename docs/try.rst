@@ -1,7 +1,7 @@
 Try it yourself
 *********
 
-We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit/tree/final>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
+We provide a `Starter-Kit <https://github.com/prescriptive-analytics/starter-kit/tree/master>`_ as guidelines for setting up the simulator and submit results. Here, we go through them in detail, and introduce the basic background about the simulator, template strategies and internvening APIs supported the simulator.
 
 
 Installation Guide
@@ -40,12 +40,11 @@ Install in your environment
     - Linux: python 3.6
 
 
-3. Clone Starter-Kit from GitHub and checkout at `final` branch.
+3. Clone Starter-Kit from GitHub and checkout at `master` branch.
 
 .. code-block:: shell
     
     git clone https://github.com/prescriptive-analytics/starter-kit.git
-    git checkout final 
 
     
 4. Go to Simualtor project's root directory and run the following to test the installation
@@ -71,12 +70,11 @@ Use a docker
 
     docker pull episim2020/simulator:latest
 
-4. Clone Starter-Kit from GitHub and checkout at `final` branch.
+4. Clone Starter-Kit from GitHub and checkout at `master` branch.
 
 .. code-block:: shell
     
     git clone https://github.com/prescriptive-analytics/starter-kit.git
-    git checkout final
 
 
 3. Create a docker container and map starter-kit into the containter by typing the following command in your terminal.
@@ -98,7 +96,7 @@ Use a docker
 
     2. Please pay attention to the security of your files, since docker container will be granted the access to change your files in the folders that you have mapped into the container. Please use carefully at your own risk.
 
-    3. The dockerfile to build this image is also attached `here <https://github.com/prescriptive-analytics/starter-kit/blob/final/simulator.Dockerfile>`_. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
+    3. The dockerfile to build this image is also attached `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/simulator.Dockerfile>`_. You can build your own image for personalized use. For this approach, please download the specified `anaconda <https://www.anaconda.com/products/individual>`_.  version. You need to put it in the same folder as the docker file. (Remember to change the file name in the dockerfile if you are using a different version.) Then, you can run the following command to build an image.
 
     .. code-block:: shell 
 
@@ -145,7 +143,7 @@ To simulate one step, simply call ``eng.next_step()``. All other data access/con
 Sample codes
 ------------
 
-Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/final/example.py>`_. 
+Here we provide a sample code for running our simulator, which can be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example.py>`_. 
 
 .. code-block:: python
 
@@ -245,7 +243,7 @@ Before submission, make sure:
 - Please upload the ``sub_xxx.txt`` to the website.
 
 
-Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/final/submit.py>`_.
+Here we provide a sample code of simulation that matches with submission requirements, which can be found `here <https://github.com/prescriptive-analytics/starter-kit/blob/master/submit.py>`_.
 
 
 
