@@ -159,7 +159,7 @@ Based on these two basic metrics, we calculate the following score for this comp
 Our goal is to minimize the score, evaluated on the 60th day of simulation.
 
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
-| :math:`\theta_I`   | 500  | :math:`\theta_Q`  | 100000 | :math:`Q_w`       |  1.0   |  :math:`T`        |   60   |
+| :math:`\theta_I`   | 500  | :math:`\theta_Q`  | 10000  | :math:`Q_w`       |  1.0   |  :math:`T`        |   60   |
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
 | :math:`\lambda_h`  | 1.0  | :math:`\lambda_i` |  0.5   | :math:`\lambda_q` |  0.3   | :math:`\lambda_c` |  0.2   |
 +--------------------+------+-------------------+--------+-------------------+--------+-------------------+--------+
