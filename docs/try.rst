@@ -247,8 +247,8 @@ Here we provide a sample code of simulation that matches with submission require
 
 Sample codes that impletments an example policy
 -----------------------------------------------
-Here we provide a sample code that implements an example policy, which would hospitalize the discovered cases and futhermore, isolate individuals with high (estimated) probability of getting infected. The probability of getting infected is estimated through the contacting information of the discovered cases.
-The codes can also be found in the starter kit - `example.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example_policy.py>`_. 
+Here we provide a sample code that implements an example policy, which would hospitalize the discovered cases and futhermore, isolate individuals with high (estimated) probability of getting infected. The probability of an individual getting infected is estimated through his/her contacting history with discovered cases.
+The codes can also be found in the starter kit - `example_policy.py <https://github.com/prescriptive-analytics/starter-kit/blob/master/example_policy.py>`_. 
 
 .. code-block:: python
 
