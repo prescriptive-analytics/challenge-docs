@@ -131,7 +131,7 @@ Simulate one step
 -----------------
 
 
-To simulate one step, simply call ``eng.next_step()``. All other data access/control APIs should be called after ``next_step()``.
+To simulate one step, simply call ``eng.next_step()``. 
 
 .. code-block:: python
 

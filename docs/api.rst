@@ -38,8 +38,7 @@ Simulation Config API
 
 .. note::
 	1. ``reset()`` should be called every time we creat an engine with ``Engine()``
-	2. All the data acess/ intervention APIs should be called after ``next_step()``
-	3. All the IDs for men and areas start from 0.
+	2. All the IDs for men and areas start from 0.
 
 
 Data Access API
